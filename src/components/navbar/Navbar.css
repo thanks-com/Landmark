@@ -1,0 +1,44 @@
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 50px;
+    background: #000;
+}
+
+.navbar .logo  img {
+    width: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: #fdd32cde;
+    text-transform: initial;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+
+.nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav ul .list-items {
+    color: #fdd32cd3;
+    text-decoration: none;
+}
+
+@media (max-width:540px) {
+    .navbar {
+        padding: 20px 10px;
+    }
+}

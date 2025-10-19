@@ -1,0 +1,150 @@
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.main-loader {
+    
+    display: grid;
+    grid-template-columns: repeat(5, 0.1fr);
+    grid-row-gap:70px ;
+    grid-column-gap:20px ;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 100px;
+    height: 75vh;
+    width: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 50px;
+    border-radius: 10px; 
+    margin: 0 auto;
+}
+
+
+
+/* Works on Chrome, Edge, Safari */
+    .main-loader::-webkit-scrollbar {
+    width: 10px;
+    }
+
+    .main-loader::-webkit-scrollbar-thumb {
+    background: #805BD0;
+    border-radius: 10px;
+    }
+
+    .main-loader::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    }
+
+
+.loader {
+    border-radius: 10px;
+    width: 250px;
+    background: #5555552d;
+    color: white;
+    justify-content: center;
+    border: 1px solid #ffffff1c;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+
+.loader p {
+    color: #93accab4;
+    font-size: 14px;
+    padding-left: 10px;
+    font-weight: bold;
+    letter-spacing: 0.1;
+    padding-bottom: 40px;
+
+}
+
+.copy-btn {
+    float: right;
+    background-color: rgb(14, 142, 202);
+    padding: 5px 20px;
+    color: #ffffffbe;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    bottom: -40px;
+    padding: 8px;
+}
+
+.copy-btn:hover {
+    background-color: rgb(10, 158, 226);
+}
+
+
+
+@media (max-width:1840px) {
+    .main-loader {
+       grid-template-columns: repeat(4, 0.1fr); 
+    }
+}
+
+@media (max-width:1485px) {
+    .main-loader {
+       grid-template-columns: repeat(4, 0.1fr); 
+    }
+
+    .loader {
+        width: 200px;
+    }
+}
+
+@media (max-width:1280px) {
+   
+   
+    .main-loader{
+         grid-template-columns: repeat(4, 0.1fr); 
+    }
+
+    .loader {
+        width: 200px;
+    }
+}
+
+@media (max-width:1121px) {
+    .main-loader {
+       grid-template-columns: repeat(3, 0.1fr); 
+    }
+}
+
+@media (max-width:900px) {
+    .main-loader {
+       grid-template-columns: repeat(2, 0.1fr); 
+    }
+    
+    .loader {
+        width: 230px;
+    }
+}
+
+@media (max-width:680px) {
+    .main-loader {
+       grid-template-columns: repeat(2, 0.1fr); 
+    }
+    
+    .loader {
+        width: 180px;
+    }
+}
+
+@media (max-width:540px) {
+    .main-loader {
+       grid-template-columns: repeat(1, 0.1fr); 
+    }
+    
+    .loader {
+        width: 250px;
+    }
+}

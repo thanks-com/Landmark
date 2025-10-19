@@ -1,0 +1,27 @@
+
+
+.footer {
+    background: #0a0811f3 ;
+    color: #ffffffcc;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.footer-content h2 {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content .img-land{
+   width: 30px;
+}
+
+.footer-content h2 .logo{
+    color: #fcd62b;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 20px;
+    text-transform: initial;
+}

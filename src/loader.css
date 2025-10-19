@@ -1,0 +1,24 @@
+
+
+.loading {
+
+    background:#030306bd ;
+    margin-top: -50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.loader {
+    
+    background: #805bd018;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.loader .copy-btn {
+    background: #8070c9c2;
+}
+

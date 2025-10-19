@@ -1,0 +1,55 @@
+
+.category-content {
+   color: white;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    margin-top: 30px;
+}
+
+
+
+.filter .icon h2 {
+    border: 1px solid #7b59ccd3;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #bbc7fdb0;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.icon h2:hover{
+    background: #e6d9d92d;
+}
+
+
+@media (max-width:1121px) {
+   
+    .filter {
+    display: grid;
+    grid-template-columns: repeat(5, 0fr); 
+    justify-content: center;
+    gap:20px;
+
+    .icon:nth-of-type(8) {
+      width: 120px;
+    }
+}
+
+}
+
+@media (max-width:680px) {
+    .filter {
+          grid-template-columns: repeat(3, 0fr); 
+    }
+}
+@media (max-width:424px) {
+    
+    .filter .icon h2 {
+        font-size: 10px;
+    }
+}
