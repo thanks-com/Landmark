@@ -39,7 +39,7 @@ export default function Docs() {
         </pre>
 
         {/* CSS Code */}
-        <h3 className="docs-css-title">🎨Delete the Style Tag and Backtis `` </h3>
+        <h3 className="docs-css-title">🎨Add css file</h3>
         <pre className="docs-code-block">
           <code className="language-css">{cssCode}</code>
         </pre>

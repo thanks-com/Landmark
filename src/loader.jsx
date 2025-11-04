@@ -6,7 +6,7 @@ export function SpinnerLoader1() {
   const [copied, setCopied] = useState(false);
   const code = `
     <div className="spinner1"></div>
-    <style>{
+   
       .spinner1 {
         width: 48px;
         height: 48px;
@@ -17,7 +17,6 @@ export function SpinnerLoader1() {
         margin: 20px auto;
       }
       @keyframes spin { to { transform: rotate(360deg); } }
-    }</style>
 
   `;
   const handleCopy = () => {
@@ -52,7 +51,20 @@ export function SpinnerLoader1() {
 // -------- Loader 1: Spinning Circle --------
 export function SpinnerLoader2() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="spin-circle"></div>
+
+      
+        .spin-circle {
+          width: 40px;
+          height: 40px;
+          border: 4px solid #ddd;
+          border-top: 4px solid #60a5fa;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -61,7 +73,6 @@ export function SpinnerLoader2() {
   return (
     <div className="loader">
       <p>Spinning Circle</p>
-
       <div className="spin-circle"></div>
 
       <button className="copy-btn" onClick={handleCopy}>
@@ -86,7 +97,23 @@ export function SpinnerLoader2() {
 // -------- Loader 2: Dots Bounce --------
 export function SpinnerLoader3() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+   
+        .dots { display: flex; justify-content: center; gap: 6px; margin: 20px; }
+        .dots span {
+          width: 10px; height: 10px; background: #60a5fa; border-radius: 50%;
+          animation: bounce 0.6s infinite alternate;
+        }
+        .dots span:nth-child(2) { animation-delay: 0.2s; }
+        .dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+   `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -122,7 +149,23 @@ export function SpinnerLoader3() {
 // -------- Loader 3: Bar Grow --------
 export function SpinnerLoader4() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="bars">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+      
+        .bars { display: flex; justify-content: center; gap: 4px; margin: 20px; }
+        .bars span {
+          width: 6px; height: 20px; background: #60a5fa;
+          animation: grow 0.6s infinite alternate;
+        }
+        .bars span:nth-child(2) { animation-delay: 0.2s; }
+        .bars span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes grow { from { height: 10px; } to { height: 30px; } }
+        `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -157,7 +200,21 @@ export function SpinnerLoader4() {
 // -------- Loader 4: Dual Ring --------
 export function SpinnerLoader5() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="dual-ring"></div>
+
+    
+     
+        .dual-ring {
+          width: 40px; height: 40px;
+          border: 4px solid transparent;
+          border-top: 4px solid #60a5fa;
+          border-right: 4px solid #60a5fa;
+          border-radius: 50%;
+          animation: rotate 1s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -191,7 +248,28 @@ export function SpinnerLoader5() {
 // -------- Loader 5: Wave --------
 export function SpinnerLoader6() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wave">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+      
+        .wave { display: flex; justify-content: center; gap: 3px; margin: 20px; }
+        .wave span {
+          width: 6px; height: 20px; background: #60a5fa;
+          animation: wave 1s infinite ease-in-out;
+        }
+        .wave span:nth-child(1) { animation-delay: 0s; }
+        .wave span:nth-child(2) { animation-delay: 0.1s; }
+        .wave span:nth-child(3) { animation-delay: 0.2s; }
+        .wave span:nth-child(4) { animation-delay: 0.3s; }
+        .wave span:nth-child(5) { animation-delay: 0.4s; }
+        @keyframes wave { 0%,100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -231,7 +309,24 @@ export function SpinnerLoader6() {
 // -------- Bouncing Dots --------
 export function SpinnerLoader7() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `
+
+     <div className="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+        .dots { display: flex; justify-content: center; gap: 6px; margin: 20px; }
+        .dots span {
+          width: 10px; height: 10px; background: #60a5fa; border-radius: 50%;
+          animation: bounce 0.6s infinite alternate;
+        }
+        .dots span:nth-child(2) { animation-delay: 0.2s; }
+        .dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -262,41 +357,26 @@ export function SpinnerLoader7() {
     </div>
   );
 }
-// -------- Loader 6: Dotted Circle --------
-export function SpinnerLoader8() {
-  const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-  return (
-    <div className="loader">
-      <p>Dotted Circle</p>
 
-      <div className="dotted-circle"></div>
-
-      <button className="copy-btn" onClick={handleCopy}>
-        {copied ? "Copied!" : "Copy Code"}
-      </button>
-      <style>{`
-        .dotted-circle {
-          width: 40px; height: 40px;
-          border-radius: 50%;
-          border: 4px dotted #60a5fa;
-          animation: spin 1s linear infinite;
-          margin: 20px auto;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-      `}</style>
-    </div>
-  );
-}
 // -------- Pulse Dot --------
 export function SpinnerLoader9() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="pulse-dot"></div>
+
+       
+     
+        .pulse-dot {
+          width: 20px; height: 20px;
+          background: #60a5fa; border-radius: 50%;
+          animation: pulse 1s infinite;
+          margin: 20px auto;
+        }
+        @keyframes pulse {
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.5); opacity: 0.5; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -330,7 +410,29 @@ export function SpinnerLoader9() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader10() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="ellipsis">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+    
+        .ellipsis { display: flex; justify-content: center; gap: 4px; margin: 20px; }
+        .ellipsis span {
+          width: 6px; height: 6px; background: #60a5fa; border-radius: 50%;
+          animation: ellipsis 0.8s infinite;
+        }
+        .ellipsis span:nth-child(2){ animation-delay:0.2s; }
+        .ellipsis span:nth-child(3){ animation-delay:0.4s; }
+        .ellipsis span:nth-child(4){ animation-delay:0.6s; }
+        @keyframes ellipsis {
+          0%{ transform: scale(1); opacity: 0.3; }
+          50%{ transform: scale(1.5); opacity: 1; }
+          100%{ transform: scale(1); opacity: 0.3; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -370,7 +472,19 @@ export function SpinnerLoader10() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader11() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="flip-square"></div>
+
+        .flip-square {
+          width: 30px; height: 30px; background: #60a5fa;
+          animation: flip 1s infinite;
+          margin: 20px auto;
+        }
+        @keyframes flip {
+          0%{ transform: rotateY(0); }
+          50%{ transform: rotateY(180deg); }
+          100%{ transform: rotateY(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -402,7 +516,22 @@ export function SpinnerLoader11() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader12() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="hourglass"></div>
+
+     
+     
+        .hourglass {
+          width: 0; height: 0; margin: 20px auto;
+          border: 20px solid #60a5fa;
+          border-color: #60a5fa transparent #60a5fa transparent;
+          animation: hourglass 1.2s infinite;
+        }
+        @keyframes hourglass {
+          0% { transform: rotate(0); }
+          50% { transform: rotate(180deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -435,7 +564,24 @@ export function SpinnerLoader12() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader13() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="ripple">
+        <span></span>
+        <span></span>
+      </div>
+
+     
+        .ripple { position: relative; width: 40px; height: 40px; margin: 20px auto; }
+        .ripple span {
+          position: absolute; border: 4px solid #60a5fa;
+          border-radius: 50%; animation: ripple 1.2s infinite;
+          inset: 0;
+        }
+        .ripple span:nth-child(2) { animation-delay: -0.6s; }
+        @keyframes ripple {
+          0% { transform: scale(0); opacity: 1; }
+          100% { transform: scale(1.5); opacity: 0; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -471,7 +617,18 @@ export function SpinnerLoader13() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader14() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="dash"></div>
+
+      
+   
+        .dash {
+          width: 40px; height: 40px; border: 4px dashed #60a5fa;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -500,7 +657,18 @@ export function SpinnerLoader14() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader15() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="triangle"></div>
+
+      
+        .triangle {
+          width: 0; height: 0; margin: 20px auto;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-bottom: 35px solid #60a5fa;
+          animation: rotate 1s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -530,7 +698,21 @@ export function SpinnerLoader15() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader16() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="cube"></div>
+
+     
+    
+        .cube {
+          width: 30px; height: 30px; background: #60a5fa;
+          animation: cube-spin 1.2s infinite linear;
+          margin: 20px auto;
+        }
+        @keyframes cube-spin {
+          0%{ transform: rotate(0); }
+          50%{ transform: rotate(180deg); }
+          100%{ transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -562,7 +744,19 @@ export function SpinnerLoader16() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader17() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="zigzag"></div>
+
+        .zigzag {
+          width: 40px; height: 4px; background: #60a5fa;
+          position: relative; animation: zigzag 1s infinite;
+          margin: 20px auto;
+        }
+        @keyframes zigzag {
+          0% { transform: translateX(0); }
+          50% { transform: translateX(20px); }
+          100% { transform: translateX(0); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -594,7 +788,20 @@ export function SpinnerLoader17() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader18() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="skew"></div>
+
+      
+      
+        .skew {
+          width: 40px; height: 8px; background: #60a5fa;
+          animation: skew 1s infinite alternate;
+          margin: 20px auto;
+        }
+        @keyframes skew {
+          from { transform: skewX(0); }
+          to { transform: skewX(30deg); }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -625,7 +832,31 @@ export function SpinnerLoader18() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader19() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="ring-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <button className="copy-btn" onClick={handleCopy}>
+        {copied ? "Copied!" : "Copy Code"}
+      </button>
+      
+        .ring-dots {
+          position: relative; width: 40px; height: 40px; margin: 20px auto;
+        }
+        .ring-dots span {
+          position: absolute; top: 50%; left: 50%;
+          width: 6px; height: 6px; background: #60a5fa; border-radius: 50%;
+          transform-origin: -12px;
+          animation: spin 1s linear infinite;
+        }
+        .ring-dots span:nth-child(2){ transform-origin: 12px; }
+        .ring-dots span:nth-child(3){ transform-origin: 0 -12px; }
+        .ring-dots span:nth-child(4){ transform-origin: 0 12px; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -665,7 +896,21 @@ export function SpinnerLoader19() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader20() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="heart"></div>
+
+     
+        .heart {
+          width: 30px; height: 30px;
+          background: #60a5fa;
+          clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 20% 100%, 0% 35%);
+          animation: beat 1s infinite;
+          margin: 20px auto;
+        }
+        @keyframes beat {
+          0%,100% { transform: scale(1); }
+          50% { transform: scale(1.3); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -698,7 +943,26 @@ export function SpinnerLoader20() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader21() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="pacman">
+        <div className="mouth"></div>
+      </div>
+
+    
+     
+        .pacman {
+          width: 0; height: 0; margin: 20px auto;
+          border: 20px solid #60a5fa;
+          border-right-color: transparent;
+          border-radius: 50%;
+          position: relative;
+          animation: spin 1s infinite linear;
+        }
+        .pacman .mouth {
+          width: 20px; height: 20px; background: #fff;
+          position: absolute; top: 10px; left: 20px;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -735,7 +999,26 @@ export function SpinnerLoader21() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader22() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="progress">
+        <div></div>
+      </div>
+
+      
+      
+        .progress {
+          width: 100px; height: 8px; background: #eee;
+          margin: 20px auto; overflow: hidden; border-radius: 4px;
+        }
+        .progress div {
+          width: 0; height: 100%; background: #60a5fa;
+          animation: progress 2s infinite;
+        }
+        @keyframes progress {
+          0% { width: 0; }
+          50% { width: 100%; }
+          100% { width: 0; }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -772,7 +1055,24 @@ export function SpinnerLoader22() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader23() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="dl">
+        <div className="arrow"></div>
+      </div>
+
+      
+     
+        .dl { width:44px; height:44px; border-radius:10px; background: linear-gradient(135deg,#00c6ff,#0072ff); display:inline-flex; align-items:center; justify-content:center; margin:0 auto; }
+        .dl .arrow {
+          width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent;
+          border-top:12px solid #fff; transform-origin:center;
+          animation: drop 1s infinite ease-in-out;
+        }
+        @keyframes drop {
+          0% { transform: translateY(-6px) scale(0.9); opacity:0.6; }
+          50% { transform: translateY(0) scale(1); opacity:1; }
+          100% { transform: translateY(-6px) scale(0.9); opacity:0.6; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -807,7 +1107,38 @@ export function SpinnerLoader23() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader24() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rocket">
+        <div className="body"></div>
+        <div className="flame"></div>
+      </div>
+
+     
+    
+        .rocket { width:48px; height:80px; position:relative; margin:0 auto; }
+        .rocket .body {
+          width:24px; height:48px; background: linear-gradient(180deg,#ff8a00,#ff3d00);
+          margin:0 auto; border-radius:12px 12px 6px 6px; position:relative; z-index:2;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+          transform-origin:center;
+          animation: rocket-bob 1.2s infinite ease-in-out;
+        }
+        .rocket .flame {
+          width:12px; height:18px; background: radial-gradient(circle at 50% 30%, #fff2, #ffd700);
+          margin:4px auto 0; border-radius:50% 50% 50% 50%;
+          transform-origin:top center;
+          animation: flame 0.5s infinite;
+        }
+        @keyframes rocket-bob {
+          0%{ transform: translateY(0); }
+          50%{ transform: translateY(-6px); }
+          100%{ transform: translateY(0); }
+        }
+        @keyframes flame {
+          0%{ transform: scaleY(0.8); opacity:0.7; }
+          50%{ transform: scaleY(1.3); opacity:1; }
+          100%{ transform: scaleY(0.8); opacity:0.7; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -857,7 +1188,24 @@ export function SpinnerLoader24() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader25() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="paper">
+        <div />
+      </div>
+
+      
+        .paper { width:48px; height:48px; perspective:600px; margin:0 auto; }
+        .paper div {
+          width:100%; height:100%; background: linear-gradient(180deg,#ffd1dc,#ff6fa3);
+          transform-origin: left center; border-radius:6px;
+          animation: flip 1s infinite ease-in-out;
+          box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+        @keyframes flip {
+          0%{ transform: rotateY(0deg); }
+          50%{ transform: rotateY(-140deg); }
+          100%{ transform: rotateY(0deg); }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -890,46 +1238,36 @@ export function SpinnerLoader25() {
     </div>
   );
 }
-// -------- Loader 8: Ellipsis --------
-export function SpinnerLoader26() {
-  const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-  return (
-    <div className="loader">
-      <p>Spiral Orbit</p>
-      <div className="spiral">
-        <div />
-      </div>
 
-      <button className="copy-btn" onClick={handleCopy}>
-        {copied ? "Copied!" : "Copy Code"}
-      </button>
-      <style>{`
-        .spiral { width:60px; height:60px; position:relative; margin:0 auto; }
-        .spiral div {
-          width:10px; height:10px; background:#7bed9f; border-radius:50%;
-          position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-          box-shadow: 0 0 6px rgba(123,237,159,0.7);
-          animation: orbit 1.2s linear infinite;
-        }
-        @keyframes orbit {
-          0% { transform: rotate(0deg) translateX(0) translateY(0) scale(1); }
-          50% { transform: rotate(180deg) translateX(18px) translateY(-18px) scale(1.2); }
-          100% { transform: rotate(360deg) translateX(0) translateY(0) scale(1); }
-        }
-      `}</style>
-    </div>
-  );
-}
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader27() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="heart"></div>
+
+      
+     
+        .heart {
+          position: relative;
+          width: 40px; height: 40px;
+          background: #ff4b91;
+          transform: rotate(45deg);
+          animation: beat 1s infinite;
+          margin: 20px auto;
+        }
+        .heart::before, .heart::after {
+          content: "";
+          position: absolute;
+          width: 40px; height: 40px;
+          background: #ff4b91;
+          border-radius: 50%;
+        }
+        .heart::before { top: -20px; left: 0; }
+        .heart::after { left: -20px; top: 0; }
+        @keyframes beat {
+          0%, 100% { transform: scale(1) rotate(45deg); }
+          50% { transform: scale(1.2) rotate(45deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -972,7 +1310,22 @@ export function SpinnerLoader27() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader28() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="cube"></div>
+
+      
+
+        .cube {
+          width: 40px; height: 40px;
+          background: #38bdf8;
+          margin: 20px auto;
+          transform-style: preserve-3d;
+          animation: rotateCube 2s infinite linear;
+        }
+        @keyframes rotateCube {
+          0% { transform: rotateX(0) rotateY(0); }
+          100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1005,7 +1358,33 @@ export function SpinnerLoader28() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader29() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wave-text">
+        {"LOADING".split("").map((ch, i) => (
+          <span key={i}>{ch}</span>
+        ))}
+      </div>
+
+    
+     
+        .wave-text {
+          display: flex;
+          justify-content: center;
+          gap: 4px;
+        }
+        .wave-text span {
+          font-size: 24px;
+          color: #22d3ee;
+          animation: wave 1.2s infinite ease-in-out;
+          display: inline-block;
+        }
+        .wave-text span:nth-child(odd) {
+          animation-delay: 0.2s;
+        }
+        @keyframes wave {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+   `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1049,7 +1428,36 @@ export function SpinnerLoader29() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader30() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rocket">
+        <div className="flame"></div>
+      </div>
+
+      
+        .rocket {
+          width: 20px; height: 40px;
+          background: #facc15;
+          margin: 20px auto;
+          border-radius: 10px 10px 0 0;
+          position: relative;
+          animation: fly 1.5s infinite ease-in-out;
+        }
+        .flame {
+          width: 10px; height: 10px;
+          background: #f87171;
+          border-radius: 50%;
+          position: absolute;
+          left: 5px; bottom: -10px;
+          animation: flame 0.5s infinite alternate;
+        }
+        @keyframes fly {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        @keyframes flame {
+          0% { transform: scaleY(1); opacity: 1; }
+          100% { transform: scaleY(1.5); opacity: 0.6; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1097,7 +1505,35 @@ export function SpinnerLoader30() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader31() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="arrow-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+     
+      
+        .arrow-loader {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin: 20px auto;
+        }
+        .arrow-loader div {
+          width: 12px; height: 12px;
+          border-right: 2px solid #34d399;
+          border-bottom: 2px solid #34d399;
+          transform: rotate(45deg);
+          animation: moveArrow 1s infinite;
+        }
+        .arrow-loader div:nth-child(2) { animation-delay: 0.2s; }
+        .arrow-loader div:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes moveArrow {
+          0% { opacity: 0.3; transform: translateX(0) rotate(45deg); }
+          50% { opacity: 1; transform: translateX(10px) rotate(45deg); }
+          100% { opacity: 0.3; transform: translateX(0) rotate(45deg); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1143,7 +1579,34 @@ export function SpinnerLoader31() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader32() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="typing">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+     
+      
+        .typing {
+          display: flex;
+          justify-content: center;
+          gap: 6px;
+          margin: 20px auto;
+        }
+        .typing span {
+          width: 10px;
+          height: 10px;
+          background: #fb923c;
+          border-radius: 50%;
+          animation: blink 1s infinite;
+        }
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink {
+          0%, 80%, 100% { opacity: 0.2; }
+          40% { opacity: 1; }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1188,7 +1651,36 @@ export function SpinnerLoader32() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader33() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="flower">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      
+      
+        .flower {
+          position: relative;
+          width: 20px; height: 20px;
+          margin: 20px auto;
+          animation: spinFlower 2s linear infinite;
+        }
+        .flower div {
+          position: absolute;
+          width: 10px; height: 10px;
+          background: #ec4899;
+          border-radius: 50%;
+        }
+        .flower div:nth-child(1) { top: -15px; left: 5px; }
+        .flower div:nth-child(2) { top: 5px; left: 25px; }
+        .flower div:nth-child(3) { top: 25px; left: 5px; }
+        .flower div:nth-child(4) { top: 5px; left: -15px; }
+        @keyframes spinFlower {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1235,7 +1727,37 @@ export function SpinnerLoader33() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader34() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="bars">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      
+      
+        .bars {
+          display: flex;
+          justify-content: center;
+          gap: 4px;
+          margin: 20px auto;
+          align-items: flex-end;
+        }
+        .bars div {
+          width: 6px;
+          height: 10px;
+          background: #f43f5e;
+          border-radius: 3px;
+          animation: barUpDown 1s infinite;
+        }
+        .bars div:nth-child(2) { animation-delay: 0.1s; }
+        .bars div:nth-child(3) { animation-delay: 0.2s; }
+        .bars div:nth-child(4) { animation-delay: 0.3s; }
+        @keyframes barUpDown {
+          0%, 100% { height: 10px; }
+          50% { height: 30px; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1284,7 +1806,24 @@ export function SpinnerLoader34() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader35() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="triangle"></div>
+
+      
+     
+        .triangle {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-bottom: 35px solid #a855f7;
+          margin: 20px auto;
+          animation: spinTriangle 1.2s infinite linear;
+        }
+        @keyframes spinTriangle {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1319,7 +1858,22 @@ export function SpinnerLoader35() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader36() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="spiral"></div>
+
+      
+      
+        .spiral {
+          width: 40px; height: 40px;
+          border: 4px dashed #06b6d4;
+          border-radius: 50%;
+          margin: 20px auto;
+          animation: rotateSpiral 1s infinite linear;
+        }
+        @keyframes rotateSpiral {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1352,7 +1906,26 @@ export function SpinnerLoader36() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader37() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="gradient-ring"></div>
+
+      
+      
+        .gradient-ring {
+          width: 50px; height: 50px;
+          border-radius: 50%;
+          margin: 20px auto;
+          border: 6px solid transparent;
+          border-top: 6px solid #f87171;
+          border-right: 6px solid #34d399;
+          border-bottom: 6px solid #60a5fa;
+          border-left: 6px solid #fbbf24;
+          animation: rotateRing 1.2s infinite linear;
+        }
+        @keyframes rotateRing {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1389,7 +1962,22 @@ export function SpinnerLoader37() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader38() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="lightning"></div>
+
+      
+      
+        .lightning {
+          width: 20px; height: 40px;
+          background: linear-gradient(45deg, #fde047, #facc15);
+          clip-path: polygon(50% 0%, 60% 40%, 40% 40%, 50% 100%, 0% 60%, 40% 60%);
+          margin: 20px auto;
+          animation: zap 0.7s infinite;
+        }
+        @keyframes zap {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.3); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1422,7 +2010,24 @@ export function SpinnerLoader38() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader39() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="hourglass"></div>
+
+      
+     
+        .hourglass {
+          width: 24px; height: 24px;
+          border: 4px solid #22d3ee;
+          border-radius: 50%;
+          border-top-color: transparent;
+          margin: 20px auto;
+          animation: spinGlass 1.5s infinite ease-in-out;
+        }
+        @keyframes spinGlass {
+          0% { transform: rotate(0deg); }
+          50% { transform: rotate(180deg); }
+          100% { transform: rotate(360deg); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1457,7 +2062,45 @@ export function SpinnerLoader39() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader40() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="download">
+        <div className="arrow"></div>
+        <div className="bar"></div>
+      </div>
+
+      
+     
+        .download {
+          position: relative;
+          width: 30px; height: 40px;
+          margin: 20px auto;
+        }
+        .arrow {
+          width: 10px; height: 20px;
+          background: #3b82f6;
+          margin: 0 auto;
+          animation: moveDown 1s infinite;
+        }
+        .arrow::after {
+          content: "";
+          position: absolute;
+          left: 10px; bottom: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid #3b82f6;
+        }
+        .bar {
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 100%; height: 6px;
+          background: #3b82f6;
+          border-radius: 3px;
+        }
+        @keyframes moveDown {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(10px); }
+          100% { transform: translateY(0); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1513,7 +2156,33 @@ export function SpinnerLoader40() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader41() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="bubbles">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+    
+        .bubbles {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin: 20px auto;
+        }
+        .bubbles div {
+          width: 14px; height: 14px;
+          background: #67e8f9;
+          border-radius: 50%;
+          animation: bubbleUp 1.5s infinite ease-in-out;
+        }
+        .bubbles div:nth-child(2) { animation-delay: 0.2s; }
+        .bubbles div:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bubbleUp {
+          0% { transform: translateY(0); opacity: 1; }
+          50% { transform: translateY(-15px); opacity: 0.6; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1558,7 +2227,24 @@ export function SpinnerLoader41() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader42() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="flip-square"></div>
+
+      <button className="copy-btn" onClick={handleCopy}>
+        {copied ? "Copied!" : "Copy Code"}
+      </button>
+      
+        .flip-square {
+          width: 40px; height: 40px;
+          background: #f97316;
+          margin: 20px auto;
+          animation: flip 1.2s infinite ease-in-out;
+        }
+        @keyframes flip {
+          0% { transform: rotateY(0); }
+          50% { transform: rotateY(180deg); background: #fb923c; }
+          100% { transform: rotateY(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1591,7 +2277,39 @@ export function SpinnerLoader42() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader43() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="sound">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      
+     
+        .sound {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 4px;
+          margin: 20px auto;
+        }
+        .sound div {
+          width: 5px;
+          height: 10px;
+          background: #22c55e;
+          border-radius: 3px;
+          animation: waveSound 1s infinite ease-in-out;
+        }
+        .sound div:nth-child(2) { animation-delay: 0.1s; }
+        .sound div:nth-child(3) { animation-delay: 0.2s; }
+        .sound div:nth-child(4) { animation-delay: 0.3s; }
+        .sound div:nth-child(5) { animation-delay: 0.4s; }
+        @keyframes waveSound {
+          0%,100% { height: 10px; }
+          50% { height: 25px; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1641,7 +2359,35 @@ export function SpinnerLoader43() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader44() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="orbit">
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+      </div>
+
+      
+    
+        .orbit {
+          position: relative;
+          width: 60px; height: 60px;
+          margin: 20px auto;
+          animation: spinOrbit 1.5s linear infinite;
+        }
+        .dot {
+          position: absolute;
+          top: 50%; left: 50%;
+          width: 10px; height: 10px;
+          border-radius: 50%;
+          transform-origin: -20px;
+        }
+        .dot:nth-child(1) { background: #3b82f6; transform: rotate(0deg) translateX(20px); }
+        .dot:nth-child(2) { background: #f43f5e; transform: rotate(120deg) translateX(20px); }
+        .dot:nth-child(3) { background: #facc15; transform: rotate(240deg) translateX(20px); }
+        @keyframes spinOrbit {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1687,7 +2433,22 @@ export function SpinnerLoader44() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader45() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="brain"></div>
+
+     
+      
+        .brain {
+          width: 50px; height: 30px;
+          background: radial-gradient(circle, #a78bfa 0%, #8b5cf6 70%);
+          border-radius: 50% 50% 40% 40%;
+          margin: 20px auto;
+          animation: pulseBrain 1.3s infinite ease-in-out;
+        }
+        @keyframes pulseBrain {
+          0%, 100% { transform: scale(1); filter: brightness(1); }
+          50% { transform: scale(1.1); filter: brightness(1.2); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1720,7 +2481,23 @@ export function SpinnerLoader45() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader46() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="globe"></div>
+
+      
+      
+        .globe {
+          width: 50px; height: 50px;
+          border-radius: 50%;
+          margin: 20px auto;
+          background: linear-gradient(90deg, #0ea5e9 0%, #22d3ee 50%, #0ea5e9 100%);
+          background-size: 200% 100%;
+          animation: spinGlobe 1.5s infinite linear;
+        }
+        @keyframes spinGlobe {
+          0% { background-position: 0% 0%; }
+          100% { background-position: -200% 0%; }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1754,7 +2531,35 @@ export function SpinnerLoader46() {
 
 export function SpinnerLoader48() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="fade-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+     
+        .fade-dots {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 6px;
+          margin: 20px auto;
+        }
+        .fade-dots span {
+          width: 10px; height: 10px;
+          background: #3b82f6;
+          border-radius: 50%;
+          opacity: 0.4;
+          animation: fade 1.2s infinite ease-in-out;
+        }
+        .fade-dots span:nth-child(2){ animation-delay: 0.2s; }
+        .fade-dots span:nth-child(3){ animation-delay: 0.4s; }
+        @keyframes fade {
+          0%,100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1800,7 +2605,29 @@ export function SpinnerLoader48() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader49() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="bar-loader">
+        <span></span>
+      </div>
+
+        .bar-loader {
+          width: 80px; height: 4px;
+          background: #e5e7eb;
+          overflow: hidden;
+          border-radius: 4px;
+          margin: 20px auto;
+        }
+        .bar-loader span {
+          display: block;
+          height: 100%;
+          width: 40%;
+          background: #10b981;
+          animation: barRun 1s linear infinite;
+        }
+        @keyframes barRun {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(200%); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1842,7 +2669,23 @@ export function SpinnerLoader49() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader50() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="circle-border"></div>
+
+      
+      
+        .circle-border {
+          width: 40px; height: 40px;
+          border: 3px solid #e5e7eb;
+          border-top-color: #6366f1;
+          border-radius: 50%;
+          margin: 20px auto;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1876,7 +2719,22 @@ export function SpinnerLoader50() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader51() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="pulse-dot"></div>
+
+      
+     
+        .pulse-dot {
+          width: 16px; height: 16px;
+          border-radius: 50%;
+          background: #f59e0b;
+          margin: 20px auto;
+          animation: pulseDot 1.4s infinite ease-in-out;
+        }
+        @keyframes pulseDot {
+          0%,100% { transform: scale(1); opacity: 0.6; }
+          50% { transform: scale(1.4); opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1909,7 +2767,32 @@ export function SpinnerLoader51() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader52() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="line-bounce">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+     
+      
+        .line-bounce {
+          display: flex; gap: 6px;
+          justify-content: center;
+          align-items: end;
+          margin: 20px auto;
+        }
+        .line-bounce div {
+          width: 4px; height: 16px;
+          background: #0ea5e9;
+          animation: bounceLine 1.1s infinite ease-in-out;
+        }
+        .line-bounce div:nth-child(2){ animation-delay: 0.1s; }
+        .line-bounce div:nth-child(3){ animation-delay: 0.2s; }
+        @keyframes bounceLine {
+          0%,100% { height: 16px; }
+          50% { height: 28px; }
+        }
+   `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1952,7 +2835,23 @@ export function SpinnerLoader52() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader53() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="soft-glow"></div>
+
+      
+        .soft-glow {
+          width: 18px; height: 18px;
+          background: #22d3ee;
+          border-radius: 50%;
+          margin: 20px auto;
+          box-shadow: 0 0 0 0 rgba(34,211,238,0.6);
+          animation: glow 1.3s infinite;
+        }
+        @keyframes glow {
+          0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.4); }
+          70% { box-shadow: 0 0 0 10px rgba(34,211,238,0); }
+          100% { box-shadow: 0 0 0 0 rgba(34,211,238,0); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -1987,7 +2886,22 @@ export function SpinnerLoader53() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader54() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="dual-ring"></div>
+ 
+        .dual-ring {
+          width: 40px; height: 40px;
+          border: 3px solid transparent;
+          border-top: 3px solid #10b981;
+          border-right: 3px solid #10b981;
+          border-radius: 50%;
+          margin: 20px auto;
+          animation: rotateDual 1s linear infinite;
+        }
+        @keyframes rotateDual {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2022,7 +2936,34 @@ export function SpinnerLoader54() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader55() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="bar-pulse">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+      
+        .bar-pulse {
+          display: flex; gap: 3px;
+          justify-content: center;
+          align-items: center;
+          margin: 20px auto;
+        }
+        .bar-pulse span {
+          width: 5px; height: 15px;
+          background: #f43f5e;
+          animation: barPulse 1s ease-in-out infinite;
+        }
+        .bar-pulse span:nth-child(2){ animation-delay: 0.1s; }
+        .bar-pulse span:nth-child(3){ animation-delay: 0.2s; }
+        .bar-pulse span:nth-child(4){ animation-delay: 0.3s; }
+        @keyframes barPulse {
+          0%,100% { height: 15px; opacity: 0.5; }
+          50% { height: 25px; opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2067,7 +3008,23 @@ export function SpinnerLoader55() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader56() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="ring-fade"></div>
+
+     
+      
+        .ring-fade {
+          width: 40px; height: 40px;
+          border: 3px solid #60a5fa;
+          border-radius: 50%;
+          opacity: 0.5;
+          margin: 20px auto;
+          animation: fadeRing 1.2s infinite ease-in-out;
+        }
+        @keyframes fadeRing {
+          0%,100% { transform: scale(1); opacity: 0.4; }
+          50% { transform: scale(1.2); opacity: 1; }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2101,7 +3058,22 @@ export function SpinnerLoader56() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader57() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="minimal-spinner"></div>
+
+  
+        .minimal-spinner {
+          width: 30px; height: 30px;
+          border: 3px solid #d1d5db;
+          border-top: 3px solid #64748b;
+          border-radius: 50%;
+          margin: 20px auto;
+          animation: spinMini 1s linear infinite;
+        }
+        @keyframes spinMini {
+          0% { transform: rotate(0); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2135,7 +3107,22 @@ export function SpinnerLoader57() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader58() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="gradient-spinner"></div>
+
+      
+      
+        .gradient-spinner {
+          width: 40px; height: 40px;
+          border-radius: 50%;
+          background: conic-gradient(#3b82f6, #10b981, #f59e0b, #3b82f6);
+          animation: rotateGradient 1s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes rotateGradient {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2168,7 +3155,32 @@ export function SpinnerLoader58() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader59() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="progress-circle">
+        <div></div>
+      </div>
+
+      
+        .progress-circle {
+          width: 50px; height: 50px;
+          border-radius: 50%;
+          border: 3px solid #e5e7eb;
+          overflow: hidden;
+          position: relative;
+          margin: 20px auto;
+        }
+        .progress-circle div {
+          position: absolute;
+          top: 0; left: 0;
+          height: 100%;
+          width: 0%;
+          background: #3b82f6;
+          animation: fillProgress 1.5s ease-in-out infinite;
+        }
+        @keyframes fillProgress {
+          0%,100% { width: 0%; }
+          50% { width: 100%; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2212,7 +3224,30 @@ export function SpinnerLoader59() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader60() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="pulse-ring"></div>
+
+      
+        .pulse-ring {
+          width: 20px; height: 20px;
+          background: #10b981;
+          border-radius: 50%;
+          margin: 20px auto;
+          position: relative;
+        }
+        .pulse-ring::after {
+          content: "";
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          border-radius: 50%;
+          background: rgba(16,185,129,0.5);
+          animation: pulseRing 1.5s ease-out infinite;
+        }
+        @keyframes pulseRing {
+          0% { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(2.5); opacity: 0; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2254,7 +3289,22 @@ export function SpinnerLoader60() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader61() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="shimmer"></div>
+
+    
+        .shimmer {
+          width: 120px; height: 8px;
+          border-radius: 4px;
+          background: linear-gradient(90deg, #e5e7eb, #f3f4f6, #e5e7eb);
+          background-size: 200%;
+          animation: shimmerMove 1.5s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes shimmerMove {
+          0% { background-position: -100% 0; }
+          100% { background-position: 100% 0; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2288,7 +3338,19 @@ export function SpinnerLoader61() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader62() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="rotating-square"></div>
+
+        .rotating-square {
+          width: 24px; height: 24px;
+          background: #f43f5e;
+          margin: 20px auto;
+          animation: rotateSquare 1.2s ease-in-out infinite;
+        }
+        @keyframes rotateSquare {
+          0%,100% { transform: rotate(0deg); }
+          50% { transform: rotate(180deg); border-radius: 6px; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2320,7 +3382,21 @@ export function SpinnerLoader62() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader63() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="soft-line"></div>
+
+     
+     
+        .soft-line {
+          width: 100px; height: 4px;
+          background: #10b981;
+          margin: 20px auto;
+          animation: softLine 1.5s ease-in-out infinite;
+        }
+        @keyframes softLine {
+          0%,100% { opacity: 0.4; transform: scaleX(0.7); }
+          50% { opacity: 1; transform: scaleX(1); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2352,7 +3428,33 @@ export function SpinnerLoader63() {
 // -------- Loader 8: Ellipsis --------
 export function SpinnerLoader64() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="dot-flow">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+     
+        .dot-flow {
+          display: flex; gap: 6px;
+          justify-content: center;
+          margin: 20px auto;
+        }
+        .dot-flow span {
+          width: 8px; height: 8px;
+          background: #6366f1;
+          border-radius: 50%;
+          animation: flowDots 1.2s infinite ease-in-out;
+        }
+        .dot-flow span:nth-child(2){ animation-delay: 0.15s; }
+        .dot-flow span:nth-child(3){ animation-delay: 0.3s; }
+        .dot-flow span:nth-child(4){ animation-delay: 0.45s; }
+        @keyframes flowDots {
+          0%,100% { opacity: 0.3; transform: translateY(0); }
+          50% { opacity: 1; transform: translateY(-8px); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2396,7 +3498,25 @@ export function SpinnerLoader64() {
 }
 export function SpinnerLoader65() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="thin-spinner"></div>
+
+      <button className="copy-btn" onClick={handleCopy}>
+        {copied ? "Copied!" : "Copy Code"}
+      </button>
+      
+        .thin-spinner {
+          width: 36px; height: 36px;
+          border: 2px solid #e5e7eb;
+          border-top-color: #3b82f6;
+          border-radius: 50%;
+          margin: 20px auto;
+          animation: spinThin 1s linear infinite;
+        }
+        @keyframes spinThin {
+          0% { transform: rotate(0); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2429,7 +3549,38 @@ export function SpinnerLoader65() {
 }
 export function SpinnerLoader66() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="wave-line">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    
+      
+        .wave-line {
+          display: flex;
+          justify-content: center;
+          align-items: end;
+          gap: 4px;
+          margin: 20px auto;
+        }
+        .wave-line span {
+          width: 4px; height: 10px;
+          background: #8b5cf6;
+          border-radius: 2px;
+          animation: waveHeight 1.2s ease-in-out infinite;
+        }
+        .wave-line span:nth-child(2){ animation-delay: 0.1s; }
+        .wave-line span:nth-child(3){ animation-delay: 0.2s; }
+        .wave-line span:nth-child(4){ animation-delay: 0.3s; }
+        .wave-line span:nth-child(5){ animation-delay: 0.4s; }
+        @keyframes waveHeight {
+          0%,100% { height: 10px; opacity: 0.5; }
+          50% { height: 25px; opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2477,7 +3628,21 @@ export function SpinnerLoader66() {
 }
 export function SpinnerLoader67() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="mini-circle"></div>
+
+      
+        .mini-circle {
+          width: 14px; height: 14px;
+          background: #14b8a6;
+          border-radius: 50%;
+          margin: 20px auto;
+          animation: miniPulse 1.3s infinite ease-in-out;
+        }
+        @keyframes miniPulse {
+          0%,100% { transform: scale(1); opacity: 0.6; }
+          50% { transform: scale(1.3); opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2509,7 +3674,22 @@ export function SpinnerLoader67() {
 }
 export function SpinnerLoader68() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wave-text" style={{ fontSize: 40 }}>
+        Loading...
+      </div>
+
+     
+        .wave-text {
+          font-size: 2px;
+          letter-spacing: 2px;
+          color: #3b82f6;
+          animation: waveMove 1.5s ease-in-out infinite;
+        }
+        @keyframes waveMove {
+          0%,10% { transform: translateY(0); }
+          20% { transform: translateY(-1px); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2540,9 +3720,32 @@ export function SpinnerLoader68() {
     </div>
   );
 }
+
+
 export function SpinnerLoader69() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `      <div
+        className="gradient-wave"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Loading...
+      </div>
+
+      
+        .gradient-wave {
+          font-size: 22px;
+          font-weight: 600;
+          background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+          background-clip: text;
+          color: transparent;
+          animation: waveGradient 2s linear infinite;
+          background-size: 200%;
+        }
+        @keyframes waveGradient {
+          0% { background-position: 0%; }
+          100% { background-position: 200%; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2579,49 +3782,27 @@ export function SpinnerLoader69() {
     </div>
   );
 }
-export function SpinnerLoader70() {
-  const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-  return (
-    <div className="loader">
-      <p>Wave Text 3</p>
-      <div
-        className="letter-wave "
-        style={{ display: "flex", justifyContent: "center" }}
-      >
-        {"Loading".split("").map((ch, i) => (
-          <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
-            {ch}
-          </span>
-        ))}
-      </div>
 
-      <button className="copy-btn" onClick={handleCopy}>
-        {copied ? "Copied!" : "Copy Code"}
-      </button>
-      <style>{`
-        .letter-wave span {
-          display: inline-block;
-          font-size: 22px;
-          color: #10b981;
-          animation: letterWave 1.2s ease-in-out infinite;
-        }
-        @keyframes letterWave {
-          0%,100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-      `}</style>
-    </div>
-  );
-}
 export function SpinnerLoader71() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div
+        className="float-text"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Please Wait...
+      </div>
+    
+        .float-text {
+          font-size: 20px;
+          color: #f97316;
+          letter-spacing: 1px;
+          animation: floatText 2s ease-in-out infinite;
+        }
+        @keyframes floatText {
+          0%,100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2654,9 +3835,42 @@ export function SpinnerLoader71() {
     </div>
   );
 }
+
 export function SpinnerLoader72() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div
+        className="ripple-text"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Syncing...
+      </div>
+
+     
+      
+        .ripple-text {
+          font-size: 22px;
+          font-weight: 500;
+          color: #14b8a6;
+          position: relative;
+          animation: rippleText 1.5s ease-in-out infinite;
+        }
+        .ripple-text::after {
+          content: '';
+          position: absolute;
+          left: 0; right: 0; bottom: -2px;
+          height: 2px;
+          background: #14b8a6;
+          animation: rippleLine 1.5s ease-in-out infinite;
+        }
+        @keyframes rippleText {
+          0%,100% { letter-spacing: 1px; opacity: 0.8; }
+          50% { letter-spacing: 3px; opacity: 1; }
+        }
+        @keyframes rippleLine {
+          0%,100% { transform: scaleX(0); }
+          50% { transform: scaleX(1); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2703,9 +3917,27 @@ export function SpinnerLoader72() {
     </div>
   );
 }
+
 export function SpinnerLoader73() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div
+        className="neon-wave"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Loading...
+      </div>
+     
+        .neon-wave {
+          font-size: 20px;
+          color: #3b82f6;
+          text-shadow: 0 0 5px #60a5fa, 0 0 10px #3b82f6;
+          animation: neonPulse 1.2s ease-in-out infinite;
+        }
+        @keyframes neonPulse {
+          0%,100% { opacity: 0.8; text-shadow: 0 0 5px #60a5fa; }
+          50% { opacity: 1; text-shadow: 0 0 15px #3b82f6; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2740,7 +3972,35 @@ export function SpinnerLoader73() {
 }
 export function SpinnerLoader74() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div
+        className="underline-wave"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Fetching Data...
+      </div>
+
+      
+        .underline-wave {
+          font-size: 20px;
+          font-weight: 500;
+          color: #8b5cf6;
+          position: relative;
+        }
+        .underline-wave::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background: linear-gradient(90deg, #8b5cf6, #6366f1, #8b5cf6);
+          background-size: 200%;
+          animation: underlineFlow 1.5s linear infinite;
+        }
+        @keyframes underlineFlow {
+          0% { background-position: 0%; }
+          100% { background-position: 200%; }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2787,7 +4047,11 @@ export function SpinnerLoader74() {
 }
 export function SpinnerLoader75() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `
+      
+  
+      
+  `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2827,7 +4091,24 @@ export function SpinnerLoader75() {
 }
 export function SpinnerLoader76() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div
+        className="stretch-text"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Processing...
+      </div>
+
+      
+        .stretch-text {
+          font-size: 20px;
+          color: #f43f5e;
+          animation: stretchText 1.6s ease-in-out infinite;
+        }
+        @keyframes stretchText {
+          0%,100% { letter-spacing: 1px; opacity: 0.7; }
+          50% { letter-spacing: 5px; opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2862,7 +4143,26 @@ export function SpinnerLoader76() {
 }
 export function SpinnerLoader77() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `
+         <div
+        className="stretch-text"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        Processing...
+      </div>
+        .rs1 {
+          width: 48px; height: 48px;
+          background: linear-gradient(135deg,#60a5fa,#3b82f6);
+          border-radius: 6px;
+          box-shadow: 0 8px 20px rgba(224, 231, 241, 0.34);
+          animation: rs1-rot 1.05s cubic-bezier(.2,.9,.3,.99) infinite;
+        }
+        @keyframes rs1-rot {
+          0% { transform: rotate(0deg) translateY(0); }
+          50% { transform: rotate(180deg) translateY(-6px); }
+          100% { transform: rotate(360deg) translateY(0); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2904,7 +4204,33 @@ export function SpinnerLoader77() {
 }
 export function SpinnerLoader78() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div style={{ marginTop: -50, marginLeft: 20, color: "#999393ff" }}>
+        RS2 — 3D Flip Cube
+      </div>
+      <div className="rs2" aria-hidden="true">
+        <div className="face"></div>
+      </div>
+
+        .rs2 {
+          width: 44px; height: 44px;
+          perspective: 600px;
+          margin: 0 auto;
+        }
+        .rs2 .face {
+          width: 100%; height: 100%;
+          background: linear-gradient(135deg,#34d399,#10b981);
+          border-radius: 6px;
+          transform-style: preserve-3d;
+          animation: rs2-flip 1.4s cubic-bezier(.22,.9,.2,1) infinite;
+          box-shadow: 0 10px 24px rgba(16,185,129,0.14);
+          margin-top: 20px;
+        }
+        @keyframes rs2-flip {
+          0% { transform: rotateX(0) rotateY(0); }
+          50% { transform: rotateX(180deg) rotateY(180deg); }
+          100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2948,7 +4274,42 @@ export function SpinnerLoader78() {
 }
 export function SpinnerLoader79() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginLeft: 20,
+          color: "#999393ff",
+        }}
+      >
+        RS3 — Dual Frame
+      </div>
+      <div className="rs3">
+        <div className="inner"></div>
+      </div>
+
+     
+      
+        .rs3 {
+          width: 62px; height: 62px;
+          border-radius: 8px;
+          display: grid;
+          place-items: center;
+          margin: 0 auto;
+          background: linear-gradient(180deg,#f97316 0%, transparent 100%);
+          animation: rs3-outer 1.8s linear infinite;
+          margin-top: 30px;
+        }
+        .rs3 .inner {
+          width: 36px; height: 36px;
+          background: linear-gradient(135deg,#fb7185,#ef4444);
+          border-radius: 6px;
+          animation: rs3-inner 1s linear infinite reverse;
+          box-shadow: 0 6px 18px rgba(239,68,68,0.12);
+        }
+        @keyframes rs3-outer { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        @keyframes rs3-inner { 0%{transform:rotate(0)} 100%{transform:rotate(-360deg)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -2999,7 +4360,29 @@ export function SpinnerLoader79() {
 }
 export function SpinnerLoader80() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rs4"></div>
+
+      
+     
+        .rs4 {
+          width: 54px; height: 54px;
+          border-radius: 8px;
+          background: linear-gradient(135deg,#8b5cf6,#06b6d4);
+          box-shadow: 0 6px 20px rgba(99,102,241,0.18), 0 0 18px rgba(6,182,212,0.12);
+          position: relative;
+          animation: rs4-rot 1.25s cubic-bezier(.25,.8,.25,1) infinite;
+          margin: 0 auto;
+          margin-top: 30px;
+        }
+        .rs4::after{
+          content:"";
+          position:absolute; inset:6px;
+          border-radius:6px;
+          background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
+          mix-blend-mode: overlay;
+        }
+        @keyframes rs4-rot { 0%{transform:rotate(0)}50%{transform:rotate(180deg) scale(1.02)}100%{transform:rotate(360deg)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3038,7 +4421,24 @@ export function SpinnerLoader80() {
 }
 export function SpinnerLoader81() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="rs5"></div>
+
+        .rs5 {
+          width: 50px; height: 50px;
+          border-radius: 8px;
+          background: linear-gradient(135deg,#f472b6,#fb7185);
+          animation: rs5-elastic 1.1s cubic-bezier(.34,1.56,.64,1) infinite;
+          box-shadow: 0 8px 20px rgba(244,114,182,0.14);
+          margin: 0 auto;
+          margin-top: 20px;
+        }
+        @keyframes rs5-elastic {
+          0% { transform: rotate(0) scale(1); }
+          30% { transform: rotate(120deg) scale(1.06); }
+          60% { transform: rotate(240deg) scale(0.96); }
+          100% { transform: rotate(360deg) scale(1); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3083,7 +4483,38 @@ export function SpinnerLoader81() {
 }
 export function SpinnerLoader82() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rs6">
+        <div className="orb or1"></div>
+        <div className="orb or2"></div>
+        <div className="orb or3"></div>
+      </div>
+     
+        .rs6 {
+          width: 68px; height: 68px;
+          position: relative;
+          margin: 0 auto;
+        }
+        .rs6::before {
+          content:"";
+          width: 40px; height: 40px;
+          background: linear-gradient(135deg,#06b6d4,#3b82f6);
+          border-radius: 8px;
+          position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+          box-shadow: 0 10px 22px rgba(59,130,246,0.12);
+          animation: rs6-main 1.6s linear infinite;
+         
+        }
+        .orb {
+          width: 10px; height: 10px; position:absolute; border-radius:2px;
+        }
+        .or1 { background:#facc15; top:8px; left:50%; transform:translateX(-50%); animation: o1 1.2s linear infinite; }
+        .or2 { background:#fb7185; top:50%; left:8px; transform:translateY(-50%); animation: o2 1.2s linear infinite; }
+        .or3 { background:#34d399; top:50%; right:8px; transform:translateY(-50%); animation: o3 1.2s linear infinite; }
+        @keyframes rs6-main { 0%{transform: translate(-50%,-50%) rotate(0)} 100%{transform: translate(-50%,-50%) rotate(360deg)} }
+        @keyframes o1 { 0%{transform:translate(-50%,0) rotate(0)} 100%{transform:translate(-50%,0) rotate(360deg)} }
+        @keyframes o2 { 0%{transform:translate(0,-50%) rotate(0)} 100%{transform:translate(0,-50%) rotate(-360deg)} }
+        @keyframes o3 { 0%{transform:translate(0,-50%) rotate(0)} 100%{transform:translate(0,-50%) rotate(360deg)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3141,7 +4572,27 @@ export function SpinnerLoader82() {
 }
 export function SpinnerLoader83() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rs7" style={{}}></div>
+
+      
+        .rs7 {
+          width: 56px; height: 56px;
+          border-radius: 10px;
+          background: #111827;
+          position: relative;
+          box-shadow: inset 0 0 0 3px rgba(255,255,255,0.03);
+          margin: 0 auto ;
+          margin-top : 20px;
+        }
+        .rs7::before {
+          content:"";
+          position:absolute; inset:4px;
+          border-radius:8px;
+          border: 3px dashed #60a5fa;
+          animation: rs7-dash 1.2s linear infinite;
+        }
+        @keyframes rs7-dash { 0%{transform:rotate(0)}100%{transform:rotate(360deg)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3188,7 +4639,25 @@ export function SpinnerLoader83() {
 }
 export function SpinnerLoader84() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rs8"></div>
+
+        .rs8 {
+          width: 50px; height: 50px;
+          background: linear-gradient(135deg,#8b5cf6,#a78bfa);
+          border-radius: 8px;
+          animation: rs8-skew 1.15s cubic-bezier(.25,.8,.25,1) infinite;
+          box-shadow: 0 8px 22px rgba(139,92,246,0.12);
+          margin: 0 auto ;
+          margin-top: 20px;
+        }
+        @keyframes rs8-skew {
+          0% { transform: rotate(0) skew(0deg); }
+          25% { transform: rotate(90deg) skew(6deg); }
+          50% { transform: rotate(180deg) skew(0deg); }
+          75% { transform: rotate(270deg) skew(-6deg); }
+          100% { transform: rotate(360deg) skew(0deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3234,7 +4703,24 @@ export function SpinnerLoader84() {
 }
 export function SpinnerLoader85() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rs9">
+        <div className="a"></div>
+        <div className="b"></div>
+      </div>
+
+        .rs9 {
+          width: 72px; height: 72px;
+          position: relative;
+          margin: 0 auto;
+        }
+        .rs9 .a, .rs9 .b {
+          width: 44px; height: 44px; position:absolute; left:14px; top:14px; border-radius:8px;
+        }
+        .rs9 .a { background: linear-gradient(135deg,#34d399,#10b981); animation: r9a 1.6s linear infinite; box-shadow: 0 8px 20px rgba(16,185,129,0.12); }
+        .rs9 .b { background: linear-gradient(135deg,#60a5fa,#3b82f6); animation: r9b 1.6s linear infinite; box-shadow: 0 8px 20px rgba(59,130,246,0.12); }
+        @keyframes r9a { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        @keyframes r9b { 0%{transform:rotate(0)} 100%{transform:rotate(-360deg)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3279,7 +4765,23 @@ export function SpinnerLoader85() {
 }
 export function SpinnerLoader86() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rs10"></div>
+      
+        .rs10 {
+          width: 58px; height: 58px;
+          margin: 0 auto;
+          margin-top: 20px;
+          background: linear-gradient(135deg,#f59e0b,#f97316);
+          animation: rs10-morph 1.5s ease-in-out infinite;
+          box-shadow: 0 10px 26px rgba(249,115,22,0.12);
+        }
+        @keyframes rs10-morph {
+          0% { border-radius: 8px; transform: rotate(0) scale(1); }
+          33% { border-radius: 28px; transform: rotate(120deg) scale(0.95); }
+          66% { border-radius: 50%; transform: rotate(240deg) scale(1.06); }
+          100% { border-radius: 8px; transform: rotate(360deg) scale(1); }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3322,7 +4824,24 @@ export function SpinnerLoader86() {
 }
 export function SpinnerLoader87() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download1"></div>
+     
+        .download1 {
+          width: 0; 
+          height: 0; 
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 25px solid #3b82f6;
+          position: relative;
+          animation: moveDown1 1.5s infinite ease-in-out;
+          margin: 20px auto;
+        }
+        @keyframes moveDown1 {
+          0% { transform: translateY(0); opacity: 0.6; }
+          50% { transform: translateY(10px); opacity: 1; }
+          100% { transform: translateY(0); opacity: 0.6; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3357,7 +4876,30 @@ export function SpinnerLoader87() {
 }
 export function SpinnerLoader89() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download2"></div>
+
+        .download2 {
+          width: 30px; height: 30px;
+          border: 3px solid #22c55e;
+          border-radius: 50%;
+          border-top-color: transparent;
+          animation: spin2 1s linear infinite;
+          position: relative;
+          margin: 20px auto;
+        }
+        .download2::after {
+          content: '';
+          position: absolute;
+          top: 9px; left: 10px;
+          width: 0; height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #22c55e;
+          animation: bounceArrow 1s infinite alternate;
+        }
+        @keyframes spin2 { 100% { transform: rotate(360deg); } }
+        @keyframes bounceArrow { 0% { transform: translateY(0); } 100% { transform: translateY(5px); } }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3399,7 +4941,31 @@ export function SpinnerLoader89() {
 }
 export function SpinnerLoader90() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download3"></div>
+
+        .download3 {
+          width: 25px; height: 25px;
+          border: 3px solid #f97316;
+          border-radius: 50%;
+          animation: fillCircle 1.5s ease-in-out infinite;
+          position: relative;
+          margin: 20px auto;
+        }
+        .download3::after {
+          content: '';
+          position: absolute;
+          top: 5px; left: 7px;
+          width: 0; height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #f97316;
+        }
+        @keyframes fillCircle {
+          0% { transform: scale(0.8); opacity: 0.7; }
+          50% { transform: scale(1.1); opacity: 1; }
+          100% { transform: scale(0.8); opacity: 0.7; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3442,7 +5008,32 @@ export function SpinnerLoader90() {
 }
 export function SpinnerLoader91() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download4"></div>
+
+        .download4 {
+          position: relative;
+          width: 10px;
+          height: 40px;
+          background: #8b5cf6;
+          animation: stretch 1s ease-in-out infinite;
+          margin: 20px auto;
+        }
+        .download4::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: -5px;
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid #8b5cf6;
+        }
+        @keyframes stretch {
+          0%,100% { height: 20px; opacity: 0.6; }
+          50% { height: 40px; opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3487,7 +5078,29 @@ export function SpinnerLoader91() {
 
 export function SpinnerLoader92() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download5"></div>
+
+        .download5 {
+          width: 32px;
+          height: 32px;
+          border: 3px solid #ec4899;
+          border-radius: 50%;
+          border-bottom-color: transparent;
+          animation: rotate5 1s linear infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download5::after {
+          content: '';
+          position: absolute;
+          top: 9px; left: 11px;
+          width: 0; height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #ec4899;
+        }
+        @keyframes rotate5 { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3528,7 +5141,34 @@ export function SpinnerLoader92() {
 }
 export function SpinnerLoader93() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="download6"></div>
+     
+        .download6 {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 3px dashed #10b981;
+          animation: rotateDashed 1.2s linear infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download6::after {
+          content: '';
+          position: absolute;
+          top: 10px; left: 12px;
+          width: 0; height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #10b981;
+          animation: arrowPulse 1s ease-in-out infinite;
+        }
+        @keyframes rotateDashed { 100% { transform: rotate(360deg); } }
+        @keyframes arrowPulse {
+          0%, 100% { transform: translateY(0); opacity: 0.7; }
+          50% { transform: translateY(5px); opacity: 1; }
+        }
+      `;
+
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3573,7 +5213,28 @@ export function SpinnerLoader93() {
 }
 export function SpinnerLoader94() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download7">
+        <div></div>
+      </div>
+
+        .download7 {
+          width: 40px; height: 40px;
+          border: 2px solid #f59e0b;
+          border-radius: 50%;
+          position: relative;
+          margin: 20px auto;
+          animation: spinRing 1.2s infinite linear;
+        }
+        .download7 div {
+          position: absolute;
+          top: 12px; left: 14px;
+          width: 0; height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #f59e0b;
+        }
+        @keyframes spinRing { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3614,7 +5275,34 @@ export function SpinnerLoader94() {
 }
 export function SpinnerLoader95() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download8">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+     
+      
+        .download8 {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 4px;
+          margin: 20px auto;
+        }
+        .download8 span {
+          width: 6px;
+          height: 10px;
+          background: #ef4444;
+          animation: barJump 1s infinite ease-in-out;
+        }
+        .download8 span:nth-child(2) { animation-delay: 0.1s; }
+        .download8 span:nth-child(3) { animation-delay: 0.2s; }
+        @keyframes barJump {
+          0%, 100% { height: 10px; }
+          50% { height: 25px; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3658,7 +5346,28 @@ export function SpinnerLoader95() {
 }
 export function SpinnerLoader96() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download9"></div>
+
+        .download9 {
+          width: 32px;
+          height: 32px;
+          background: conic-gradient(#3b82f6 0 25%, transparent 25% 100%);
+          border-radius: 50%;
+          animation: spinPie 1s linear infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download9::after {
+          content: '';
+          position: absolute;
+          top: 8px; left: 10px;
+          width: 0; height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #3b82f6;
+        }
+        @keyframes spinPie { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3698,7 +5407,31 @@ export function SpinnerLoader96() {
 }
 export function SpinnerLoader97() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download10"></div>
+
+        .download10 {
+          width: 30px; height: 30px;
+          border: 3px solid #6366f1;
+          border-radius: 50%;
+          border-bottom: 3px solid transparent;
+          animation: rotateBounce 1.2s ease-in-out infinite;
+          position: relative;
+          margin: 20px auto;
+        }
+        .download10::after {
+          content: '';
+          position: absolute;
+          top: 8px; left: 9px;
+          width: 0; height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #6366f1;
+        }
+        @keyframes rotateBounce {
+          0%, 100% { transform: rotate(0deg) scale(1); }
+          50% { transform: rotate(180deg) scale(1.2); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3741,7 +5474,33 @@ export function SpinnerLoader97() {
 }
 export function SpinnerLoader98() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download11"></div>
+
+      <button className="copy-btn" onClick={handleCopy}>
+        {copied ? "Copied!" : "Copy Code"}
+      </button>
+      
+        .download11 {
+          width: 40px; height: 40px;
+          border: 4px solid transparent;
+          border-top: 4px solid #06b6d4;
+          border-radius: 50%;
+          animation: rotate11 1s linear infinite;
+          position: relative;
+          margin: 20px auto;
+        }
+        .download11::after {
+          content: '';
+          position: absolute;
+          top: 10px; left: 12px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 8px solid #06b6d4;
+          animation: bounce11 1s ease-in-out infinite;
+        }
+        @keyframes rotate11 { 100% { transform: rotate(360deg); } }
+        @keyframes bounce11 { 0%,100%{transform:translateY(0);}50%{transform:translateY(5px);} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3782,7 +5541,20 @@ export function SpinnerLoader98() {
 }
 export function SpinnerLoader99() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download12"></div>
+      
+        .download12 {
+          width: 30px; height: 30px;
+          background: linear-gradient(45deg, #a855f7, #3b82f6);
+          clip-path: polygon(50% 0%, 100% 70%, 75% 70%, 75% 100%, 25% 100%, 25% 70%, 0% 70%);
+          animation: bounce12 1.2s ease-in-out infinite;
+          margin: 20px auto;
+        }
+        @keyframes bounce12 {
+          0%,100% { transform: translateY(0); }
+          50% { transform: translateY(10px); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3813,7 +5585,26 @@ export function SpinnerLoader99() {
 }
 export function SpinnerLoader100() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="download13"></div>
+
+        .download13 {
+          position: relative;
+          width: 40px; height: 40px;
+          border-radius: 50%;
+          background: conic-gradient(#84cc16 0 270deg, transparent 270deg);
+          animation: spin13 1.5s linear infinite;
+          margin: 20px auto;
+        }
+        .download13::before {
+          content: '';
+          position: absolute;
+          top: 12px; left: 14px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #84cc16;
+        }
+        @keyframes spin13 { 100% { transform: rotate(360deg); } }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3852,7 +5643,29 @@ export function SpinnerLoader100() {
 }
 export function SpinnerLoader104() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download14"></div>
+
+     
+        .download14 {
+          width: 8px; height: 40px;
+          background: #ef4444;
+          margin: 20px auto;
+          animation: grow14 1s infinite ease-in-out;
+          position: relative;
+        }
+        .download14::after {
+          content: '';
+          position: absolute;
+          bottom: -10px; left: -6px;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid #ef4444;
+        }
+        @keyframes grow14 {
+          0%,100% { height: 20px; opacity: 0.7; }
+          50% { height: 40px; opacity: 1; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3890,9 +5703,30 @@ export function SpinnerLoader104() {
     </div>
   );
 }
+
 export function SpinnerLoader101() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download15"></div>
+        .download15 {
+          width: 40px;
+          height: 40px;
+          border: 4px solid #facc15;
+          border-bottom-color: transparent;
+          border-radius: 50%;
+          animation: spin15 1s linear infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download15::after {
+          content: '';
+          position: absolute;
+          top: 10px; left: 12px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #facc15;
+        }
+        @keyframes spin15 { 100% { transform: rotate(360deg); } }`;
+
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3932,7 +5766,40 @@ export function SpinnerLoader101() {
 }
 export function SpinnerLoader102() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download16">
+        <div className="arrow"></div>
+      </div>
+        .download16 {
+          width: 50px;
+          height: 6px;
+          background: linear-gradient(to right, #06b6d4, #3b82f6);
+          border-radius: 5px;
+          overflow: hidden;
+          animation: progress16 2s infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download16 .arrow {
+          position: absolute;
+          top: -8px;
+          left: 45%;
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #3b82f6;
+          animation: moveArrow16 2s infinite;
+        }
+        @keyframes progress16 {
+          0% { background-position: 0 0; }
+          100% { background-position: 50px 0; }
+        }
+        @keyframes moveArrow16 {
+          0% { transform: translateY(0); opacity: 1; }
+          50% { transform: translateY(5px); opacity: 0.6; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -3985,7 +5852,29 @@ export function SpinnerLoader102() {
 }
 export function SpinnerLoader103() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `      <div className="download17"></div>
+
+        .download17 {
+          width: 30px; height: 30px;
+          border: 3px solid #a3e635;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: spin17 1s linear infinite;
+          position: relative;
+          margin: 20px auto;
+        }
+        .download17::after {
+          content: '';
+          position: absolute;
+          top: 9px; left: 10px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #a3e635;
+          animation: bounce17 1s infinite alternate;
+        }
+        @keyframes spin17 { 100% { transform: rotate(360deg); } }
+        @keyframes bounce17 { 0% { transform: translateY(0);}100%{transform:translateY(5px);} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4027,7 +5916,26 @@ export function SpinnerLoader103() {
 
 export function SpinnerLoader105() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download18"></div>
+
+        .download18 {
+          width: 40px; height: 40px;
+          border: 4px dotted #9333ea;
+          border-radius: 50%;
+          animation: spin18 1.4s linear infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download18::after {
+          content: '';
+          position: absolute;
+          top: 9px; left: 11px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #9333ea;
+        }
+        @keyframes spin18 { 100% { transform: rotate(360deg); } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4066,7 +5974,30 @@ export function SpinnerLoader105() {
 
 export function SpinnerLoader106() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download19"></div>
+
+        .download19 {
+          width: 32px;
+          height: 32px;
+          background: radial-gradient(circle at 50% 30%, #f472b6, #ec4899);
+          border-radius: 50%;
+          animation: pulse19 1.2s infinite ease-in-out;
+          position: relative;
+          margin: 20px auto;
+        }
+        .download19::after {
+          content: '';
+          position: absolute;
+          top: 9px; left: 11px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid white;
+        }
+        @keyframes pulse19 {
+          0%,100% { transform: scale(1); opacity: 0.7; }
+          50% { transform: scale(1.3); opacity: 1; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4108,7 +6039,28 @@ export function SpinnerLoader106() {
 }
 export function SpinnerLoader107() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="download20"></div>
+
+  
+        .download20 {
+          width: 40px; height: 40px;
+          border: 3px solid #0ea5e9;
+          border-top: 3px solid transparent;
+          border-radius: 50%;
+          animation: spin20 1.2s ease-in-out infinite;
+          margin: 20px auto;
+          position: relative;
+        }
+        .download20::after {
+          content: '';
+          position: absolute;
+          top: 8px; left: 10px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #0ea5e9;
+        }
+        @keyframes spin20 { 100% { transform: rotate(360deg); } }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4147,7 +6099,38 @@ export function SpinnerLoader107() {
 }
 export function SpinnerLoader108() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="neon-pulse" aria-hidden="true">
+        <div className="arrow" />
+      </div>
+
+        .neon-pulse {
+          width: 64px; height: 64px; border-radius: 50%;
+          background: radial-gradient(circle at 30% 30%, rgba(99,102,241,0.14), transparent 40%);
+          display: grid; place-items: center;
+          box-shadow: 0 8px 28px rgba(59,130,246,0.12), 0 0 32px rgba(99,102,241,0.06) inset;
+          animation: neon-glow 1.6s ease-in-out infinite;
+          margin: 0 auto;
+        }
+        .neon-pulse .arrow {
+          width: 0; height: 0;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 18px solid #60a5fa;
+          filter: drop-shadow(0 6px 10px rgba(96,165,250,0.25));
+          transform-origin: 50% 50%;
+          animation: neon-pulse-arrow 1.2s ease-in-out infinite;
+        }
+        @keyframes neon-glow {
+          0% { box-shadow: 0 8px 28px rgba(99,102,241,0.06), 0 0 0 rgba(96,165,250,0); transform: scale(1); }
+          50% { box-shadow: 0 12px 36px rgba(99,102,241,0.16), 0 0 18px rgba(96,165,250,0.16); transform: scale(1.03); }
+          100% { box-shadow: 0 8px 28px rgba(99,102,241,0.06), 0 0 0 rgba(96,165,250,0); transform: scale(1); }
+        }
+        @keyframes neon-pulse-arrow {
+          0% { transform: translateY(0) scale(1); opacity: 1 }
+          50% { transform: translateY(6px) scale(0.95); opacity: 0.8 }
+          100% { transform: translateY(0) scale(1); opacity: 1 }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4204,9 +6187,44 @@ export function SpinnerLoader108() {
     </div>
   );
 }
+
 export function SpinnerLoader109() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="liquid-drop">
+        <div className="drop" />
+      </div>
+
+        .liquid-drop {
+          width: 60px; height: 72px;
+          display: grid; place-items: start center;
+          margin: 0 auto;
+          margin-top: 30px;
+          
+        }
+        .liquid-drop .drop {
+          width: 34px; height: 44px;
+          background: linear-gradient(180deg,#06b6d4,#22c1c3);
+          border-radius: 50% 50% 40% 40%;
+          position: relative;
+          transform-origin: center top;
+          animation: drop-morph 1.4s ease-in-out infinite;
+        }
+        .liquid-drop .drop::after {
+          content: "";
+          position: absolute;
+          left: 50%; bottom: -12px;
+          transform: translateX(-50%);
+          width: 0; height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 12px solid #22c1c3;
+        }
+        @keyframes drop-morph {
+          0% { transform: scaleY(1) translateY(0); border-radius: 50% 50% 40% 40%; }
+          45% { transform: scaleY(0.9) translateY(6px); border-radius: 46% 46% 36% 36%; }
+          85% { transform: scaleY(1.05) translateY(-2px); border-radius: 30% 30% 20% 20%; }
+          100% { transform: scaleY(1) translateY(0); border-radius: 50% 50% 40% 40%; }
+        }`;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4231,6 +6249,7 @@ export function SpinnerLoader109() {
       <button className="copy-btn" onClick={handleCopy}>
         {copied ? "Copied!" : "Copy Code"}
       </button>
+
       <style>{`
         .liquid-drop {
           width: 60px; height: 72px;
@@ -4267,9 +6286,25 @@ export function SpinnerLoader109() {
     </div>
   );
 }
+
 export function SpinnerLoader111() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="pixel-download" aria-hidden="true">
+        <div className="col c1" />
+        <div className="col c2" />
+        <div className="col c3" />
+      </div>
+          .pixel-download { width: 72px; display:flex; justify-content:center; gap:6px; margin:0 auto; }
+          .pixel-download .col { width:12px; display:flex; flex-direction:column; gap:6px; align-items:center;}
+          .pixel-download .col::before { content:''; width:12px; height:12px; background:#ef4444; display:block; border-radius:2px; animation: pixelDrop 1s infinite; }
+          .pixel-download .c2::before { background:#f97316; animation-delay: 0.12s; }
+          .pixel-download .c3::before { background:#60a5fa; animation-delay: 0.24s; }
+          @keyframes pixelDrop {
+          0% { transform: translateY(-14px); opacity: 0; }
+          40% { transform: translateY(0); opacity: 1; }
+          100% { transform: translateY(-2px); opacity: 0.6; }
+          }
+      }`
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4292,27 +6327,56 @@ export function SpinnerLoader111() {
         <div className="col c2" />
         <div className="col c3" />
       </div>
+
       <button className="copy-btn" onClick={handleCopy}>
         {copied ? "Copied!" : "Copy Code"}
       </button>
-      <style>{`
-        .pixel-download { width: 72px; display:flex; justify-content:center; gap:6px; margin:0 auto; }
-        .pixel-download .col { width:12px; display:flex; flex-direction:column; gap:6px; align-items:center;}
-        .pixel-download .col::before { content:''; width:12px; height:12px; background:#ef4444; display:block; border-radius:2px; animation: pixelDrop 1s infinite; }
-        .pixel-download .c2::before { background:#f97316; animation-delay: 0.12s; }
-        .pixel-download .c3::before { background:#60a5fa; animation-delay: 0.24s; }
-        @keyframes pixelDrop {
+
+      <style>
+        {`
+          .pixel-download { width: 72px; display:flex; justify-content:center; gap:6px; margin:0 auto; }
+          .pixel-download .col { width:12px; display:flex; flex-direction:column; gap:6px; align-items:center;}
+          .pixel-download .col::before { content:''; width:12px; height:12px; background:#ef4444; display:block; border-radius:2px; animation: pixelDrop 1s infinite; }
+          .pixel-download .c2::before { background:#f97316; animation-delay: 0.12s; }
+          .pixel-download .c3::before { background:#60a5fa; animation-delay: 0.24s; }
+          @keyframes pixelDrop {
           0% { transform: translateY(-14px); opacity: 0; }
           40% { transform: translateY(0); opacity: 1; }
           100% { transform: translateY(-2px); opacity: 0.6; }
-        }
-      `}</style>
+          }
+        `}
+      </style>      
     </div>
   );
 }
+
 export function SpinnerLoader112() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="cyber-tech">
+        <div className="hex">
+          <div className="arrow" />
+        </div>
+      </div>
+  
+        .cyber-tech { width: 72px; height: 72px; display:grid; place-items:center; margin:0 auto; }
+        .cyber-tech .hex {
+          width: 56px; height: 48px; background: linear-gradient(135deg,#7c3aed,#06b6d4);
+          clip-path: polygon(25% 0%, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+          display:grid; place-items:center;
+          box-shadow: 0 12px 28px rgba(124,58,237,0.12);
+          animation: hex-rotate 1.6s linear infinite;
+        }
+        .cyber-tech .arrow {
+          width: 0; height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 14px solid rgba(255,255,255,0.95);
+          filter: drop-shadow(0 6px 10px rgba(7,89,133,0.12));
+          animation: arrow-bob 0.9s ease-in-out infinite;
+        }
+        @keyframes hex-rotate { 0%{transform:rotate(0deg)}100%{transform:rotate(360deg)} }
+        @keyframes arrow-bob { 0%{transform:translateY(0)}50%{transform:translateY(6px)}100%{transform:translateY(0)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4361,9 +6425,36 @@ export function SpinnerLoader112() {
     </div>
   );
 }
+
 export function SpinnerLoader113() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="gradient-flow">
+        <div className="arrow" />
+      </div>
+
+      
+        .gradient-flow {
+          width: 68px; height: 68px; border-radius: 50%;
+          background: conic-gradient(from 0deg, #06b6d4, #3b82f6, #8b5cf6, #06b6d4);
+          display:grid; place-items:center;
+          background-size: 200% 200%;
+          animation: gradient-spin 2.2s linear infinite;
+          margin: 0 auto;
+        }
+        .gradient-flow .arrow {
+          width: 0; height: 0;
+          border-left: 14px solid transparent;
+          border-right: 14px solid transparent;
+          border-top: 20px solid white;
+          filter: drop-shadow(0 8px 18px rgba(8,145,178,0.12));
+          animation: arrow-pulse 1.1s ease-in-out infinite;
+        }
+        @keyframes gradient-spin {
+          0% { background-position: 0% 50% }
+          100% { background-position: 100% 50% }
+        }
+        @keyframes arrow-pulse { 0%{transform:translateY(0)}50%{transform:translateY(8px)}100%{transform:translateY(0)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4414,9 +6505,33 @@ export function SpinnerLoader113() {
     </div>
   );
 }
+
 export function SpinnerLoader114() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="crystal-shard">
+        <div className="shard" />
+      </div>
+
+      
+        .crystal-shard { width: 64px; height: 64px; display:grid; place-items:center; margin:0 auto; }
+        .crystal-shard .shard {
+          width: 34px; height: 34px;
+          background: linear-gradient(135deg,#a78bfa,#60a5fa 60%);
+          clip-path: polygon(50% 0, 85% 30%, 70% 70%, 30% 70%, 15% 30%);
+          animation: shard-tilt 1.6s ease-in-out infinite;
+          box-shadow: 0 12px 32px rgba(96,165,250,0.12), inset 0 -6px 20px rgba(255,255,255,0.06);
+          position: relative;
+        }
+        .crystal-shard .shard::after {
+          content:"";
+          position:absolute; inset:0;
+          background: linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
+          mix-blend-mode: overlay;
+          animation: shimmer 1.6s linear infinite;
+        }
+        @keyframes shard-tilt { 0%{transform:rotate(0) translateY(0)}50%{transform:rotate(8deg) translateY(6px)}100%{transform:rotate(0) translateY(0)} }
+        @keyframes shimmer { 0%{transform:translateX(-100%)}100%{transform:translateX(100%)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4464,9 +6579,31 @@ export function SpinnerLoader114() {
     </div>
   );
 }
+
 export function SpinnerLoader115() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="digital-circuit" aria-hidden="true">
+        <span className="line l1" />
+        <span className="line l2" />
+        <span className="line l3" />
+      </div>
+
+      
+        .digital-circuit { width: 72px; height: 64px; display:grid; place-items:center; gap:6px; margin:0 auto; }
+        .digital-circuit .line {
+          width: 56px; height: 6px; background: linear-gradient(90deg,#06b6d4,#06b6d4);
+          position: relative; border-radius: 4px; overflow: visible;
+        }
+        .digital-circuit .line::after {
+          content: ""; position:absolute; right: -10px; top: -9px;
+          width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent;
+          border-top: 10px solid #06b6d4; opacity:0; transform: translateY(0);
+          animation: dashArrow 1.2s linear infinite;
+        }
+        .digital-circuit .l2 { animation: pulseLine 1.2s ease-in-out infinite; animation-delay:0.08s }
+        .digital-circuit .l3 { animation: pulseLine 1.2s ease-in-out infinite; animation-delay:0.16s }
+        @keyframes pulseLine { 0%{transform:scaleX(0.6); opacity:0.6}50%{transform:scaleX(1); opacity:1}100%{transform:scaleX(0.6); opacity:0.6} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4513,9 +6650,34 @@ export function SpinnerLoader115() {
     </div>
   );
 }
+
 export function SpinnerLoader116() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="soft-cloud">
+        <div className="cloud" />
+        <div className="arrow" />
+      </div>
+
+      
+        .soft-cloud { width: 92px; height: 72px; display:grid; place-items:center; margin:0 auto; position:relative; }
+        .soft-cloud .cloud {
+          width: 64px; height: 36px;
+          background: linear-gradient(180deg,#f0f9ff,#e6f7ff);
+          border-radius: 999px;
+          position: absolute; top: 8px;
+          box-shadow: 0 8px 22px rgba(14,165,233,0.08);
+          animation: cloud-breath 2.6s ease-in-out infinite;
+        }
+        .soft-cloud .arrow {
+          width: 0; height: 0;
+          border-left: 12px solid transparent; border-right: 12px solid transparent;
+          border-top: 18px solid #0ea5e9;
+          position:absolute; top: 36px;
+          animation: cloud-arrow 1.2s ease-in-out infinite;
+        }
+        @keyframes cloud-breath { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+        @keyframes cloud-arrow { 0%{transform:translateY(-2px); opacity:0.8}50%{transform:translateY(8px); opacity:1}100%{transform:translateY(-2px); opacity:0.8} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4564,9 +6726,29 @@ export function SpinnerLoader116() {
     </div>
   );
 }
+
 export function SpinnerLoader117() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="infinity-loop">
+        <div className="loop" />
+        <div className="arrow" />
+      </div>
+      
+        .infinity-loop { width: 80px; height: 44px; display:grid; place-items:center; margin:0 auto; position:relative; }
+        .infinity-loop .loop {
+          width: 72px; height: 20px; border-radius: 999px; background: linear-gradient(90deg,#fb7185,#f59e0b);
+          position:absolute; opacity:0.95;
+          transform-origin:center; animation: loop-rotate 2s linear infinite;
+        }
+        .infinity-loop .arrow {
+          position:absolute; top:6px; left: calc(50% - 8px);
+          width:0; height:0;
+          border-left:8px solid transparent; border-right:8px solid transparent; border-top:12px solid white;
+          animation: inf-arrow 1s ease-in-out infinite;
+        }
+        @keyframes loop-rotate { 0%{transform:scaleX(1) rotate(0)}50%{transform:scaleX(0.95) rotate(180deg)}100%{transform:scaleX(1) rotate(360deg)} }
+        @keyframes inf-arrow { 0%{transform:translateY(0)}50%{transform:translateY(8px)}100%{transform:translateY(0)} }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4610,9 +6792,34 @@ export function SpinnerLoader117() {
     </div>
   );
 }
+
 export function SpinnerLoader118() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="aurora-beam">
+        <div className="beam" />
+        <div className="arrow" />
+      </div>
+
+     
+        .aurora-beam { width: 72px; height: 72px; display:grid; place-items:center; margin:0 auto; position:relative; overflow:hidden; border-radius:10px; }
+        .aurora-beam .beam {
+          width: 180%; height: 40%;
+          background: linear-gradient(90deg, rgba(99,102,241,0.9), rgba(96,165,250,0.9), rgba(34,197,94,0.9));
+          position: absolute; top: 10%; left: -40%;
+          transform: skewX(-20deg);
+          animation: aurora-sweep 1.8s linear infinite;
+          filter: blur(8px);
+          opacity: 0.9;
+        }
+        .aurora-beam .arrow {
+          position: absolute; width:0; height:0;
+          border-left:12px solid transparent; border-right:12px solid transparent; border-top:18px solid white;
+          bottom: 12px;
+          animation: aurora-bob 1.2s ease-in-out infinite;
+        }
+        @keyframes aurora-sweep { 0%{left:-60%}100%{left:60%} }
+        @keyframes aurora-bob { 0%{transform:translateY(0)}50%{transform:translateY(8px)}100%{transform:translateY(0)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4661,9 +6868,30 @@ export function SpinnerLoader118() {
     </div>
   );
 }
+
 export function SpinnerLoader119() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr1" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    
+        .wr1 { width: 84px; height: 84px; position: relative; margin: 0 auto; }
+        .wr1 span {
+          position: absolute; inset:0; border-radius:50%;
+          border: 4px solid rgba(59,130,246,0.16);
+          animation: wr1-r 1.6s infinite ease-out;
+        }
+        .wr1 span:nth-child(2){ border-color: rgba(59,130,246,0.12); animation-delay: 0.15s; }
+        .wr1 span:nth-child(3){ border-color: rgba(59,130,246,0.08); animation-delay: 0.3s; }
+        @keyframes wr1-r {
+          0%{ transform: scale(0.6); opacity: 0.95; }
+          70%{ transform: scale(1.15); opacity: 0.22; }
+          100%{ transform: scale(1.3); opacity: 0; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4708,9 +6936,23 @@ export function SpinnerLoader119() {
     </div>
   );
 }
+
 export function SpinnerLoader120() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr2">
+        <div className="ring"></div>
+      </div>
+      
+        .wr2 { width: 84px; height: 84px; display:grid; place-items:center; margin:0 auto; }
+        .wr2 .ring {
+          width: 72px; height: 72px; border-radius:50%;
+          background: conic-gradient(#06b6d4, #3b82f6, #8b5cf6, #06b6d4);
+          background-size: 200% 200%;
+          animation: wr2-spin 2.2s linear infinite;
+          filter: blur(6px);
+        }
+        @keyframes wr2-spin { 0% { background-position:0% 50% } 100% { background-position:100% 50% } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4750,7 +6992,28 @@ export function SpinnerLoader120() {
 }
 export function SpinnerLoader121() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr3">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+
+        .wr3 { width: 92px; height: 92px; position: relative; margin:0 auto; }
+        .wr3 i {
+          position:absolute; left:50%; top:50%; width:10px; height:10px; background:#f97316; border-radius:50%;
+          transform-origin:center; transform:translate(-50%,-50%) scale(0);
+          animation: wr3-dot 1.2s cubic-bezier(.2,.9,.2,1) infinite;
+        }
+        .wr3 i:nth-child(2){ animation-delay:0.12s; background:#fb7185; transform: translate(-50%,-50%) scale(0); }
+        .wr3 i:nth-child(3){ animation-delay:0.24s; background:#60a5fa; }
+        .wr3 i:nth-child(4){ animation-delay:0.36s; background:#34d399; }
+        @keyframes wr3-dot {
+          0%{ transform: translate(-50%,-50%) scale(0); opacity:0; }
+          40%{ transform: translate(-50%,-120%) scale(1); opacity:1; }
+          100%{ transform: translate(-50%,-160%) scale(0.6); opacity:0; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4799,7 +7062,21 @@ export function SpinnerLoader121() {
 }
 export function SpinnerLoader110() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="wr4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      
+        .wr4 { display:flex; gap:6px; justify-content:center; align-items:flex-end; margin:0 auto; width:120px; height:40px; }
+        .wr4 span { width:8px; background:linear-gradient(180deg,#34d399,#10b981); border-radius:3px; animation: wr4-b 1.2s ease-in-out infinite; }
+        .wr4 span:nth-child(2){ animation-delay:0.12s }
+        .wr4 span:nth-child(3){ animation-delay:0.24s }
+        .wr4 span:nth-child(4){ animation-delay:0.36s }
+        @keyframes wr4-b { 0%,100%{height:8px}50%{height:30px} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4840,7 +7117,17 @@ export function SpinnerLoader110() {
 }
 export function SpinnerLoader122() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr5">
+        <div className="pulse"></div>
+        <div className="center">•</div>
+      </div>
+
+      
+        .wr5 { width:80px; height:80px; position:relative; margin:0 auto; display:grid; place-items:center; }
+        .wr5 .pulse { position:absolute; width:72px; height:72px; border-radius:50%; background:rgba(139,92,246,0.12); animation:wr5-p 1.6s ease-out infinite; }
+        .wr5 .center{ font-size:26px; color:#8b5cf6; position:relative; z-index:2; }
+        @keyframes wr5-p { 0%{transform:scale(0.8); opacity:1}70%{transform:scale(1.2); opacity:0.18}100%{transform:scale(1.3); opacity:0} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4868,6 +7155,9 @@ export function SpinnerLoader122() {
     </div>
   );
 }
+
+/*------- folt 123 -------- */
+
 export function SpinnerLoader123() {
   const [copied, setCopied] = useState(false);
   const code = `<div class="spinner1"></div>`;
@@ -4914,7 +7204,19 @@ export function SpinnerLoader123() {
 }
 export function SpinnerLoader124() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr7">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+        .wr7 { width:96px; height:96px; position:relative; margin:0 auto; display:grid; place-items:center; }
+        .wr7 div { position:absolute; border-radius:50%; border:6px solid transparent; animation:wr7-r 2s infinite; }
+        .wr7 div:nth-child(1){ width:88px; height:88px; border-color:rgba(34,211,238,0.12); animation-delay:0s; }
+        .wr7 div:nth-child(2){ width:64px; height:64px; border-color:rgba(59,130,246,0.12); animation-delay:0.2s; }
+        .wr7 div:nth-child(3){ width:40px; height:40px; border-color:rgba(99,102,241,0.16); animation-delay:0.4s; }
+        @keyframes wr7-r { 0%{transform:scale(0.7); opacity:1}70%{transform:scale(1.12); opacity:0.18}100%{opacity:0} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4947,7 +7249,15 @@ export function SpinnerLoader124() {
 }
 export function SpinnerLoader125() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr8">
+        <span></span>
+      </div>
+
+      
+        .wr8 { width:80px; height:80px; display:grid; place-items:center; margin:0 auto; }
+        .wr8 span { width:68px; height:68px; border-radius:50%; box-shadow:0 0 12px rgba(99,102,241,0.6); background:radial-gradient(circle,#7c3aed, #06b6d4); animation:wr8-n 1.4s ease-in-out infinite; }
+        @keyframes wr8-n { 0%{transform:scale(0.95); opacity:0.9}50%{transform:scale(1.06); opacity:0.7}100%{transform:scale(0.95); opacity:0.9} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -4975,7 +7285,19 @@ export function SpinnerLoader125() {
 }
 export function SpinnerLoader126() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="wr9">
+        <div className="c1"></div>
+        <div className="c2"></div>
+      </div>
+
+      
+        .wr9 { width:80px; height:80px; position:relative; margin:0 auto; display:grid; place-items:center; }
+        .wr9 .c1, .wr9 .c2 { position:absolute; border-radius:50%; }
+        .wr9 .c1 { width:66px; height:66px; background:rgba(249,115,22,0.08); animation:wr9-a 1.8s infinite; }
+        .wr9 .c2 { width:44px; height:44px; background:rgba(236,72,153,0.12); animation:wr9-b 1.2s infinite; }
+        @keyframes wr9-a { 0%{transform:scale(0.9);}50%{transform:scale(1.06);}100%{transform:scale(0.9);} }
+        @keyframes wr9-b { 0%{transform:translateY(0)}50%{transform:translateY(6px)}100%{transform:translateY(0)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5007,7 +7329,17 @@ export function SpinnerLoader126() {
 }
 export function SpinnerLoader127() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <div className="wr10">
+        <div className="outer"></div>
+        <div className="inner"></div>
+      </div>
+
+        .wr10 { width:88px; height:88px; position:relative; margin:0 auto; display:grid; place-items:center; }
+        .wr10 .outer { width:76px; height:76px; border-radius:50%; border:6px solid rgba(96,165,250,0.14); animation:wr10-o 1.6s infinite; position:absolute; }
+        .wr10 .inner { width:34px; height:34px; border-radius:50%; background:linear-gradient(180deg,#60a5fa,#3b82f6); animation:wr10-i 1.2s infinite; position:relative; box-shadow:0 8px 20px rgba(59,130,246,0.12); }
+        @keyframes wr10-o { 0%{transform:scale(0.85); opacity:0.9}70%{transform:scale(1.1); opacity:0.18}100%{opacity:0} }
+        @keyframes wr10-i { 0%{transform:scale(1)}50%{transform:scale(0.9)}100%{transform:scale(1)} }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5038,7 +7370,20 @@ export function SpinnerLoader127() {
 }
 export function SpinnerLoader128() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="rotating-square"></div>
+
+        .rotating-square {
+          width: 40px;
+          height: 40px;
+          background: linear-gradient(135deg, #3b82f6, #06b6d4);
+          animation: rotate 1.5s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5070,7 +7415,22 @@ export function SpinnerLoader128() {
 }
 export function SpinnerLoader129() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="bouncing-triangle"></div>
+
+      
+        .bouncing-triangle {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-bottom: 35px solid #f97316;
+          animation: bounce 1s ease-in-out infinite;
+          margin: 20px auto;
+        }
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }`;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5104,7 +7464,21 @@ export function SpinnerLoader129() {
 }
 export function SpinnerLoader130() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="expanding-diamond"></div>
+
+        .expanding-diamond {
+          width: 40px;
+          height: 40px;
+          background: #10b981;
+          transform: rotate(45deg);
+          animation: expand 1.2s ease-in-out infinite;
+          margin: 20px auto;
+        }
+        @keyframes expand {
+          0%, 100% { transform: rotate(45deg) scale(1); opacity: 1; }
+          50% { transform: rotate(45deg) scale(1.5); opacity: 0.6; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5137,7 +7511,22 @@ export function SpinnerLoader130() {
 }
 export function SpinnerLoader131() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="hexagon"></div>
+
+      
+        .hexagon {
+          width: 60px;
+          aspect-ratio: 1.155;
+          background: conic-gradient(from 180deg, #a855f7, #6366f1, #a855f7);
+          clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+          animation: morph 2s ease-in-out infinite;
+          margin: 20px auto;
+        }
+        @keyframes morph {
+          0%, 100% { transform: rotate(0deg) scale(1); }
+          50% { transform: rotate(60deg) scale(1.2); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5169,8 +7558,24 @@ export function SpinnerLoader131() {
   );
 }
 export function SpinnerLoader132() {
-  const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+   const [copied, setCopied] = useState(false);
+  const code = `<div className="spiral-circle"></div>
+
+        .spiral-circle {
+          width: 40px;
+          height: 40px;
+          border: 5px solid #3b82f6;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5204,7 +7609,22 @@ export function SpinnerLoader132() {
 }
 export function SpinnerLoader133() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="pulsing-pentagon"></div>
+
+      
+        .pulsing-pentagon {
+          width: 60px;
+          aspect-ratio: 1;
+          background: linear-gradient(135deg, #f43f5e, #ec4899);
+          clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+          animation: pulse 1.3s ease-in-out infinite;
+          margin: 20px auto;
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.3); opacity: 0.7; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5237,7 +7657,34 @@ export function SpinnerLoader133() {
 }
 export function SpinnerLoader134() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="zigzag-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+     
+        .zigzag-loader {
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          margin: 20px auto;
+        }
+        .zigzag-loader span {
+          width: 6px;
+          height: 30px;
+          background: #8b5cf6;
+          animation: zigzag 1.2s infinite ease-in-out;
+        }
+        .zigzag-loader span:nth-child(2) { animation-delay: 0.1s; }
+        .zigzag-loader span:nth-child(3) { animation-delay: 0.2s; }
+        .zigzag-loader span:nth-child(4) { animation-delay: 0.3s; }
+        @keyframes zigzag {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5282,7 +7729,33 @@ export function SpinnerLoader134() {
 }
 export function SpinnerLoader135() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="floating-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+     
+        .floating-dots {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin: 20px auto;
+        }
+        .floating-dots span {
+          width: 12px;
+          height: 12px;
+          background: #22d3ee;
+          border-radius: 50%;
+          animation: float 1s ease-in-out infinite;
+        }
+        .floating-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .floating-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); opacity: 0.9; }
+          50% { transform: translateY(-12px); opacity: 0.6; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5326,7 +7799,21 @@ export function SpinnerLoader135() {
 }
 export function SpinnerLoader136() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="starburst"></div>
+        .starburst {
+          width: 50px;
+          height: 50px;
+          background: conic-gradient(from 0deg, #f59e0b, #f43f5e, #3b82f6, #10b981, #f59e0b);
+          mask: radial-gradient(transparent 45%, black 46%);
+          border-radius: 50%;
+          animation: spin 1.4s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5360,7 +7847,37 @@ export function SpinnerLoader136() {
 }
 export function SpinnerLoader137() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="infinity-loader">
+        <span></span>
+        <span></span>
+      </div>
+      
+        .infinity-loader {
+          position: relative;
+          width: 60px;
+          height: 30px;
+          margin: 20px auto;
+        }
+        .infinity-loader span {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: 3px solid #6366f1;
+          border-radius: 50%;
+          animation: move 1.5s linear infinite;
+        }
+        .infinity-loader span:nth-child(2) {
+          left: 30px;
+          animation-delay: 0.75s;
+        }
+        @keyframes move {
+          0% { transform: translateX(0) scale(1); }
+          25% { transform: translateX(15px) scale(0.9); }
+          50% { transform: translateX(30px) scale(1); }
+          75% { transform: translateX(15px) scale(0.9); }
+          100% { transform: translateX(0) scale(1); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5408,7 +7925,20 @@ export function SpinnerLoader137() {
 }
 export function SpinnerLoader138() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="gradient-3d"></div>
+      
+        .gradient-3d {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff7eb3, #6c63ff);
+          animation: rotate3d 1.2s linear infinite;
+        }
+        @keyframes rotate3d {
+          0% { transform: rotateX(0) rotateY(0); }
+          100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5443,7 +7973,21 @@ export function SpinnerLoader138() {
 }
 export function SpinnerLoader139() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="neural-glow"></div>
+
+        .neural-glow {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: radial-gradient(circle, #00ffe0, #0070f3, #000);
+          box-shadow: 0 0 20px #00ffe0, 0 0 40px #0070f3;
+          animation: neural-pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes neural-pulse {
+          0%, 100% { transform: scale(1); opacity: 0.8; }
+          50% { transform: scale(1.3); opacity: 1; }
+        }
+  `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5476,7 +8020,22 @@ export function SpinnerLoader139() {
 }
 export function SpinnerLoader140() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="glass-spinner"></div>
+
+     
+        .glass-spinner {
+          width: 60px;
+          height: 60px;
+          border: 4px solid rgba(255,255,255,0.2);
+          border-top-color: #ffffff80;
+          border-radius: 50%;
+          backdrop-filter: blur(10px);
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5509,7 +8068,21 @@ export function SpinnerLoader140() {
 }
 export function SpinnerLoader141() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="liquid-drop"></div>
+
+      
+        .liquid-drop {
+          width: 20px;
+          height: 20px;
+          background: #00bfff;
+          border-radius: 50%;
+          animation: drip 1s ease-in-out infinite;
+        }
+        @keyframes drip {
+          0%, 100% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(20px) scale(1.2); }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5541,7 +8114,21 @@ export function SpinnerLoader141() {
 }
 export function SpinnerLoader142() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="neon-ring"></div>
+
+        .neon-ring {
+          width: 64px;
+          height: 64px;
+          border: 3px solid #0ff;
+          border-radius: 50%;
+          box-shadow: 0 0 20px #0ff, inset 0 0 10px #0ff;
+          animation: pulse-ring 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-ring {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.3); opacity: 0.6; }
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5574,7 +8161,32 @@ export function SpinnerLoader142() {
 }
 export function SpinnerLoader143() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <button className="bhm">Hover me</button>
+
+        .bhm{
+          position:relative;
+          padding:10px 18px;
+          background:#0ea5e9;
+          color:#fff;
+          border-radius:12px;
+          border:none;
+          font-weight:600;
+          cursor:pointer;
+          transition:transform .18s ease;
+          box-shadow: 0 6px 18px rgba(14,165,233,0.14);
+          overflow:hidden;
+          margin: 0px 20px;
+        }
+        .bhm::before{
+          content:"";
+          position:absolute; inset:0; border-radius:12px;
+          background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+          transform: translateX(-110%);
+          transition:transform .45s cubic-bezier(.2,.9,.2,1);
+        }
+        .bhm:hover{ transform: translateY(-4px); }
+        .bhm:hover::before{ transform: translateX(0%); }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5627,7 +8239,27 @@ export function SpinnerLoader143() {
 }
 export function SpinnerLoader144() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div
+        className="flip-card"
+        role="button"
+        tabIndex="0"
+        style={{ height: 50 }}
+      >
+        <div className="face front">Front</div>
+        <div className="face back">Back</div>
+      </div>
+
+        .flip-card { width:160px; height:100px; perspective:1000px; margin:0 auto; cursor:pointer; }
+        .flip-card .face {
+          width:100%; height:100%; position:absolute; left:0; top:0; border-radius:10px;
+          display:flex; align-items:center; justify-content:center; font-weight:600;
+          backface-visibility:hidden; transition: transform .8s cubic-bezier(.2,.9,.2,1);
+        }
+        .flip-card .front { background: linear-gradient(135deg,#f97316,#fb7185); color:white; transform: rotateY(0deg); }
+        .flip-card .back { background: linear-gradient(135deg,#60a5fa,#3b82f6); color:white; transform: rotateY(180deg); }
+        .flip-card:hover .front{ transform: rotateY(-180deg); }
+        .flip-card:hover .back{ transform: rotateY(0deg); }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5675,7 +8307,20 @@ export function SpinnerLoader144() {
 }
 export function SpinnerLoader145() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="glass">Modal content</div>
+
+      
+        .glass{
+          width:220px; padding:14px; border-radius:12px; color:#0f172a;
+          background: rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.08);
+          backdrop-filter: blur(8px) saturate(1.1);
+          box-shadow: 0 8px 30px rgba(2,6,23,0.18);
+          transform: translateY(10px); opacity:0; animation: glass-in .6s forwards;
+          margin: 0px 15px;
+          color: #fff;
+        }
+        @keyframes glass-in { to{ transform: translateY(0); opacity:1; } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5715,7 +8360,16 @@ export function SpinnerLoader145() {
 }
 export function SpinnerLoader146() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="pw">
+        <div className="fill" />
+      </div>
+
+        .pw { width:200px; height:14px; background:#e6eef6; border-radius:999px; overflow:hidden; margin:0 auto; }
+        .pw .fill { width:40%; height:100%; background: linear-gradient(90deg,#06b6d4,#3b82f6); border-radius:999px;
+          animation: wave-fill 2s infinite linear;
+          background-size:200% 100%;
+        }
+    `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5753,7 +8407,18 @@ export function SpinnerLoader146() {
 }
 export function SpinnerLoader147() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="type">
+        <span className="txt">Hello, world</span>
+        <span className="cursor">!</span>
+      </div>
+
+    
+        .type { font-size:18px; color:tomato; display:inline-flex; gap:6px; align-items:center; margin-left: 60px }
+        .type .txt { display:inline-block; white-space:nowrap; overflow:hidden; max-width:0; animation: typing 3s steps(18) infinite; }
+        .type .cursor { color:#green; opacity:1; animation: blink .8s steps(1) infinite; }
+        @keyframes typing { 0%{ max-width:0 } 50%{ max-width:120px } 100%{ max-width:0 } }
+        @keyframes blink { 0%, 50% { opacity:1 } 51%, 100% { opacity:0 } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5773,7 +8438,7 @@ export function SpinnerLoader147() {
       </div>
       <div className="type">
         <span className="txt">Hello, world</span>
-        <span className="cursor">█</span>
+        <span className="cursor">!</span>
       </div>
 
       <button className="copy-btn" onClick={handleCopy}>
@@ -5791,7 +8456,17 @@ export function SpinnerLoader147() {
 }
 export function SpinnerLoader148() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<div className="gs">Content</div>
+
+      
+        .gs { width:220px; padding:14px; border-radius:10px; color:#fff; font-weight:600;
+          background: linear-gradient(90deg,#06b6d4,#3b82f6,#8b5cf6);
+          background-size: 300% 100%;
+          animation: gs-shift 6s linear infinite;
+          margin: 15px;
+        }
+        @keyframes gs-shift { 0%{ background-position:0% 50% } 100%{ background-position:100% 50% } }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5828,7 +8503,27 @@ export function SpinnerLoader148() {
 }
 export function SpinnerLoader149() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <button className="btn17">Rainbow</button>
+
+   
+        .btn17 {
+          padding: 14px 34px;
+          font-size: 16px;
+          font-weight: bold;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          background: linear-gradient(270deg, #ff0066, #ffcc00, #33ccff, #ff00ff);
+          background-size: 600% 600%;
+          animation: rainbow 6s infinite alternate;
+          margin: 20px;
+        }
+        @keyframes rainbow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5865,7 +8560,26 @@ export function SpinnerLoader149() {
 }
 export function SpinnerLoader150() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = ` <button className="btn16">Bubble Pop</button>
+
+      
+        .btn16 {
+          padding: 14px 34px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+          background: #ff3399;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: 0.2s;
+          margin: 20px;
+        }
+        .btn16:active {
+          transform: scale(0.9);
+          background: #ff66b2;
+        }
+     `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -5901,7 +8615,26 @@ export function SpinnerLoader150() {
 }
 export function SpinnerLoader151() {
   const [copied, setCopied] = useState(false);
-  const code = `<div class="spinner1"></div>`;
+  const code = `<button className="btn15">Metallic</button>
+
+        .btn15 {
+          padding: 14px 34px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+          background: linear-gradient(145deg, #aaa, #333);
+          border: 1px solid #888;
+          border-radius: 10px;
+          cursor: pointer;
+          box-shadow: inset 2px 2px 6px #111, inset -2px -2px 6px #666;
+          transition: 0.3s;
+          margin: 20px;
+        }
+        .btn15:hover {
+          background: linear-gradient(145deg, #fff, #666);
+          color: black;
+        }
+      `;
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -8646,7 +11379,6 @@ export default function AllLoaders() {
           <SpinnerLoader5 />
           <SpinnerLoader6 />
           <SpinnerLoader7 />
-          <SpinnerLoader8 />
           <SpinnerLoader9 />
           <SpinnerLoader10 />
           <SpinnerLoader11 />
@@ -8663,7 +11395,6 @@ export default function AllLoaders() {
           <SpinnerLoader23 />
           <SpinnerLoader24 />
           <SpinnerLoader25 />
-          <SpinnerLoader26 />
           <SpinnerLoader27 />
           <SpinnerLoader28 />
           <SpinnerLoader29 />
@@ -8707,7 +11438,6 @@ export default function AllLoaders() {
           <SpinnerLoader68 />
           <SpinnerLoader67 />
           <SpinnerLoader69 />
-          <SpinnerLoader70 />
           <SpinnerLoader71 />
           <SpinnerLoader72 />
           <SpinnerLoader73 />

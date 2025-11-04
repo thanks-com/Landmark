@@ -12,7 +12,18 @@ const Home = () => {
       <div className="home-container">
         <div className="home">
           <div className="home-content">
-            
+            <div className="animation">
+              <div className="ripple">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div className="animation2">
+              <div className="ripple">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <div className="hero">
               <div className="left-content">
                 <button>Hello Boss</button>
@@ -34,8 +45,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <AllLoader/>
-        <Footer/>
+        <AllLoader />
+        <Footer />
       </div>
     </div>
   );
